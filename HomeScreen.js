@@ -3,9 +3,16 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 class HomeScreen extends Component {
 	static navigationOptions = {
-		title: 'Comunity Connect'
+		title: 'Community Connect',
+		headerStyle: {
+      backgroundColor: '#0B306F',
+    },
+    headerTintColor: '#fff',
+    headerTitleStyle: {
+      fontWeight: 'bold',
+    }
 	};
-	render() {
+	render = ()=> {
 		const { navigate } = this.props.navigation;
 		return (
 			<View style={styles.container}>
@@ -17,13 +24,21 @@ class HomeScreen extends Component {
 							<Text style={{ color: 'white', ...styles.buttonText }}>Now</Text>
 						</View>
 					</TouchableOpacity>
+					<TouchableOpacity
+					style={{ width: '50%' }}
+					onPress={() => navigate('NearMe')}>
 					<View style={styles.buttonNearMe} title='This is a button'>
 						<Text style={styles.buttonText}>Near Me</Text>
 					</View>
+					</TouchableOpacity>
 				</View>
-				<View style={styles.buttonForMe} title='This is a button'>
-					<Text style={styles.buttonText}>For Me</Text>
-				</View>
+				<TouchableOpacity
+					style={{ width: '90%' }}
+					onPress={() => navigate('ForMe')}>
+					<View style={styles.buttonForMe} title='This is a button'>
+						<Text style={styles.buttonText}>For Me</Text>
+					</View>
+				</TouchableOpacity>
 			</View>
 		);
 	}
@@ -35,7 +50,8 @@ const styles = StyleSheet.create({
 		backgroundColor: '#0B306F',
 		alignItems: 'center',
 		justifyContent: 'center',
-		padding: 10
+		padding: 10,
+		height:'100%'
 	},
 	buttonNow: {
 		height: 130,
@@ -52,7 +68,7 @@ const styles = StyleSheet.create({
 	},
 	buttonNearMe: {
 		height: 130,
-		width: '50%',
+		width: '100%',
 		borderWidth: 4,
 		borderColor: 'white',
 		display: 'flex',
@@ -64,14 +80,14 @@ const styles = StyleSheet.create({
 		borderLeftWidth: 2
 	},
 	buttonForMe: {
-		height: 150,
+		height: 130,
 		borderColor: 'white',
 		borderWidth: 4,
 		borderTopWidth: 2,
 		display: 'flex',
 		justifyContent: 'center',
 		alignItems: 'center',
-		width: '90%',
+		width: '100%',
 		backgroundColor: '#FFE34E',
 		borderBottomRightRadius: 15,
 		borderBottomLeftRadius: 15
