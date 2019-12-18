@@ -1,10 +1,24 @@
-import React, { useState, Component } from 'react';
-import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, Button, TouchableWithoutFeedback, TouchableOpacity,ScrollView } from 'react-native';
+import Animated, { Easing } from 'react-native-reanimated';
+import { bInterpolate, bin, useTimingTransition } from 'react-native-redash'
+import ForMeList from './ForMeList'
+import categories from '../util/categories'
+const { not, interpolate } = Animated;
 
-const ForMeScreen = props => {
+const ForMeScreen = (props) => {
+	const [open,setOpen] = useState(false);
+
   return (
     <View style={styles.container}>
-      <Text>For Me</Text>
+			<TouchableWithoutFeedback style={styles.container} onPress={()=> setOpen(prev => !prev)}>
+				<View style={styles.accordian}>
+					<ForMeList list={categories} title='Resources'/>
+					{/* {list} */}
+				</View>
+			</TouchableWithoutFeedback>
+
+
       <View style={styles.nav}>
         <TouchableOpacity onPress={() => props.navigation.navigate('Now')}>
           <Text>Now</Text>
@@ -16,6 +30,7 @@ const ForMeScreen = props => {
     </View>
   );
 };
+
 
 ForMeScreen.navigationOptions = ({navigation})=>({
 	title: 'For Me',
@@ -33,14 +48,18 @@ const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		backgroundColor: '#fff',
-		alignItems: 'center',
-		justifyContent: 'space-between',
+		alignItems: 'flex-start',
+		justifyContent: 'center',
 		height:'100%'
 	},
 	button: {
 		height: '40%',
 		width: '10%',
 		backgroundColor: 'red'
+	},
+	accordian:{
+		alignItems:'stretch',
+		flex:1,
 	},
 	nav:{
 		flexDirection:'row',
