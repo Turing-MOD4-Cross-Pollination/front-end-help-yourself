@@ -1,13 +1,12 @@
-import React, { useState } from "react";
-import { StyleSheet, Text, TouchableWithoutFeedback} from "react-native";
-import Animated, { Easing } from "react-native-reanimated";
-import { bInterpolate, bin, useTimingTransition } from "react-native-redash";
-import Chevron from "./Chevron";
-import Item, { LIST_ITEM_HEIGHT } from "./ForMeListItem";
-import { ScrollView } from "react-native-gesture-handler";
+import React, { useState } from 'react';
+import { StyleSheet, Text, TouchableWithoutFeedback } from 'react-native';
+import Animated, { Easing } from 'react-native-reanimated';
+import { bInterpolate, bin, useTimingTransition } from 'react-native-redash';
+import Chevron from './Chevron';
+import Item, { LIST_ITEM_HEIGHT } from './ForMeListItem';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const { not, interpolate } = Animated;
-
 
 export default ({ list, title }) => {
   const [open, setOpen] = useState(false);
@@ -38,34 +37,33 @@ export default ({ list, title }) => {
           <Chevron {...{ transition }} />
         </Animated.View>
       </TouchableWithoutFeedback>
-      <ScrollView>
-        <Animated.View style={[styles.items, { height }]}>
+        <ScrollView>
+      <Animated.View style={[styles.items, { height }]}>
           {list.map((item, key) => (
             <Item {...item} key={item.name} isLast={key === list.length - 1} />
           ))}
-        </Animated.View>
-      </ScrollView>
+      </Animated.View>
+        </ScrollView>
     </>
   );
 };
-
-
+//SWAPPED THE SCROLL VIEW AND THE ANIMATED VIEW PLACEMENT TO THE OUTSIDE.
 const styles = StyleSheet.create({
   container: {
     marginTop: 16,
-    backgroundColor: "white",
+    backgroundColor: 'white',
     padding: 16,
     borderTopLeftRadius: 8,
     borderTopRightRadius: 8,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between"
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between'
   },
   title: {
     fontSize: 16,
-    fontWeight: "bold"
+    fontWeight: 'bold'
   },
   items: {
-    overflow: "hidden"
+    overflow: 'hidden'
   }
 });
