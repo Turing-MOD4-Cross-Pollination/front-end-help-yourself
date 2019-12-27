@@ -1,53 +1,54 @@
-import React, { useState, Component } from 'react';
-import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
+import React from 'react';
+import {
+	StyleSheet,
+	Text,
+	View,
+	ScrollView,
+	TouchableOpacity
+} from 'react-native';
+import resources from '../data/resources';
+import EmergencyItem from './EmergencyItem';
 
-const NowScreen = (props) => {
+const NowScreen = props => {
+	const emergencyItems = resources.map((resource, index) => (
+		<EmergencyItem key={index} resource={resource} />
+	));
 
-    return (
-      <View style={styles.container}>
-        <Text>NOW Me</Text>
-        <View style={styles.nav}>
-          <TouchableOpacity onPress={() => props.navigation.navigate('ForMe')}>
-            <Text>For Me</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => props.navigation.navigate('NearMe')}>
-            <Text>Near Me</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-    );
-}
-
-NowScreen.navigationOptions = ({navigation})=>({
-	title: 'Community Connect',
-	headerStyle: {
-		backgroundColor: '#0B306F'
-	},
-	headerTintColor: '#fff',
-	headerTitleStyle: {
-		fontWeight: 'bold'
-	},
-	headerRight: <Button title='Home' onPress={()=>navigation.navigate('Home')}/>
-});
-
+	return (
+		<ScrollView style={styles.container}>
+			{emergencyItems}
+			<View style={styles.nav}>
+				<TouchableOpacity onPress={() => props.navigation.navigate('Now')}>
+					<Text>Now</Text>
+				</TouchableOpacity>
+				<TouchableOpacity onPress={() => props.navigation.navigate('NearMe')}>
+					<Text>Near Me</Text>
+				</TouchableOpacity>
+			</View>
+		</ScrollView>
+	);
+};
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-		justifyContent: 'space-between',
-  },
-  button: {
-    height: '40%',
-    width: '10%',
-    backgroundColor: 'red'
+	container: {
+		flex: 1,
+		backgroundColor: '#fff',
+		flexGrow: 1
 	},
-	nav:{
-		flexDirection:'row',
-		width:'100%',
-		justifyContent:'space-between',
-		padding:10
+	button: {
+		height: '40%',
+		width: '10%',
+		backgroundColor: 'red'
+	},
+	accordian: {
+		alignItems: 'stretch',
+		flex: 1
+	},
+	nav: {
+		flexDirection: 'row',
+		width: '100%',
+		justifyContent: 'space-between',
+		padding: 10
 	}
 });
 
