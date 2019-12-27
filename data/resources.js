@@ -15,7 +15,7 @@ const resources = [
 		notes: 'Prenatal intervention & child development services'
 	},
 	{
-		name: 'Assistance League Denver: Operation School Bell',
+		name: 'Assistance League Denver',
 		website: 'http://denver.assistanceleague.org/ps.projects.cfm?ID=704',
 		location: '1400 Josephine Street',
 		contact: '303-322-5205',

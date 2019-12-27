@@ -16,15 +16,8 @@ const NowScreen = props => {
 
 	return (
 		<ScrollView style={styles.container}>
+			<Text style={styles.header}>Emergency Contacts</Text>
 			{emergencyItems}
-			<View style={styles.nav}>
-				<TouchableOpacity onPress={() => props.navigation.navigate('Now')}>
-					<Text>Now</Text>
-				</TouchableOpacity>
-				<TouchableOpacity onPress={() => props.navigation.navigate('NearMe')}>
-					<Text>Near Me</Text>
-				</TouchableOpacity>
-			</View>
 		</ScrollView>
 	);
 };
@@ -33,7 +26,14 @@ const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		backgroundColor: '#fff',
-		flexGrow: 1
+		paddingBottom: 200,
+		paddingTop: 20,
+		paddingRight: 20,
+		paddingLeft: 20
+	},
+	header: {
+		fontSize: 30,
+		marginBottom: 30
 	},
 	button: {
 		height: '40%',
