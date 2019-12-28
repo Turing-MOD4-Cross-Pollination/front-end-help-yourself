@@ -18,14 +18,6 @@ const NowScreen = props => {
 
 	return (
 		<>
-			<View style={styles.nav}>
-				<TouchableOpacity onPress={() => props.navigation.navigate('Now')}>
-					<Text>Now</Text>
-				</TouchableOpacity>
-				<TouchableOpacity onPress={() => props.navigation.navigate('NearMe')}>
-					<Text>Near Me</Text>
-				</TouchableOpacity>
-			</View>
 			<Text style={styles.header}>Emergency Contacts</Text>
 			<ScrollView style={styles.container}>
 				{emergencyItems}
