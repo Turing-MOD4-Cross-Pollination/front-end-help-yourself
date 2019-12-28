@@ -1,47 +1,53 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import Footer from './Footer';
 
 class HomeScreen extends Component {
 	static navigationOptions = {
 		title: 'Community Connect',
 		headerStyle: {
-      backgroundColor: '#0B306F',
-    },
-    headerTintColor: '#fff',
-    headerTitleStyle: {
-      fontWeight: 'bold',
-    }
+			backgroundColor: '#0B306F'
+		},
+		headerTintColor: '#fff',
+		headerTitleStyle: {
+			fontWeight: 'bold'
+		}
 	};
-	render = ()=> {
+	render = () => {
 		const { navigate } = this.props.navigation;
 		return (
-			<View style={styles.container}>
-				<View style={styles.row}>
+			<>
+				<View style={styles.container}>
+					<View style={styles.row}>
+						<TouchableOpacity
+							style={{ width: '50%' }}
+							onPress={() => navigate('Now')}>
+							<View style={styles.buttonNow} title='This is a button'>
+								<Text style={{ color: 'white', ...styles.buttonText }}>
+									Now
+								</Text>
+							</View>
+						</TouchableOpacity>
+						<TouchableOpacity
+							style={{ width: '50%' }}
+							onPress={() => navigate('NearMe')}>
+							<View style={styles.buttonNearMe} title='This is a button'>
+								<Text style={styles.buttonText}>Near Me</Text>
+							</View>
+						</TouchableOpacity>
+					</View>
 					<TouchableOpacity
-						style={{ width: '50%' }}
-						onPress={() => navigate('Now')}>
-						<View style={styles.buttonNow} title='This is a button'>
-							<Text style={{ color: 'white', ...styles.buttonText }}>Now</Text>
+						style={{ width: '90%' }}
+						onPress={() => navigate('ForMe')}>
+						<View style={styles.buttonForMe} title='This is a button'>
+							<Text style={styles.buttonText}>For Me</Text>
 						</View>
 					</TouchableOpacity>
-					<TouchableOpacity
-					style={{ width: '50%' }}
-					onPress={() => navigate('NearMe')}>
-					<View style={styles.buttonNearMe} title='This is a button'>
-						<Text style={styles.buttonText}>Near Me</Text>
-					</View>
-					</TouchableOpacity>
 				</View>
-				<TouchableOpacity
-					style={{ width: '90%' }}
-					onPress={() => navigate('ForMe')}>
-					<View style={styles.buttonForMe} title='This is a button'>
-						<Text style={styles.buttonText}>For Me</Text>
-					</View>
-				</TouchableOpacity>
-			</View>
+				<Footer />
+			</>
 		);
-	}
+	};
 }
 
 const styles = StyleSheet.create({
@@ -51,7 +57,7 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		justifyContent: 'center',
 		padding: 10,
-		height:'100%'
+		height: '100%'
 	},
 	buttonNow: {
 		height: 130,
