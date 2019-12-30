@@ -12,12 +12,12 @@ const { not, interpolate } = Animated;
 import Chevron from './Chevron';
 
 const EmergencyItem = ({ resource }) => {
-	const LIST_ITEM_HEIGHT = 54;
+	const LIST_ITEM_HEIGHT = 52;
 	const [open, setOpen] = useState(false);
 
 	const transition = useTimingTransition(
 		open,
-		{ duration: 400 },
+		{ duration: 250 },
 		Easing.inOut(Easing.ease)
 	);
 
@@ -26,13 +26,15 @@ const EmergencyItem = ({ resource }) => {
 		inputRange: [0, 16 / 400],
 		outputRange: [8, 0]
 	});
+	let [switchValue, toggleSwitchValue] = useState(false);
+	const itemBottomRadius = switchValue ? 8 : 0;
 
 	return (
 		<View style={styles.container}>
 			<TouchableWithoutFeedback onPress={() => setOpen(prev => !prev)}>
 				<Animated.View
 					style={[
-						styles.container,
+						styles.chevronContainer,
 						{
 							borderBottomLeftRadius: bottomRadius,
 							borderBottomRightRadius: bottomRadius
@@ -43,7 +45,18 @@ const EmergencyItem = ({ resource }) => {
 				</Animated.View>
 			</TouchableWithoutFeedback>
 			<ScrollView>
-				<Animated.View style={[styles.items, { height }]}></Animated.View>
+				<Animated.View style={[styles.items, { height }]}>
+					<View
+						style={[
+							styles.itemContainer,
+							{
+								borderBottomLeftRadius: itemBottomRadius,
+								borderBottomRightRadius: itemBottomRadius
+							}
+						]}>
+						<Text style={styles.name}>{resource.contact}</Text>
+					</View>
+				</Animated.View>
 			</ScrollView>
 		</View>
 	);
@@ -52,20 +65,61 @@ const EmergencyItem = ({ resource }) => {
 const styles = StyleSheet.create({
 	container: {
 		marginTop: 5,
+		marginBottom: 5,
+		borderTopWidth: 1,
+		borderColor: 'lightgray',
 		backgroundColor: 'white',
 		padding: 5,
 		borderTopLeftRadius: 8,
 		borderTopRightRadius: 8,
+		borderBottomLeftRadius: 8,
+		borderBottomRightRadius: 8,
+		flexDirection: 'column',
+		alignItems: 'flex-start',
+		justifyContent: 'space-between',
+		paddingRight: 10,
+		paddingLeft: 15,
+		marginLeft: 15,
+		marginRight: 15
+	},
+	chevronContainer: {
 		flexDirection: 'row',
-		alignItems: 'center',
-		justifyContent: 'space-between'
+		justifyContent: 'space-between',
+		width: '100%'
 	},
 	title: {
 		fontSize: 16,
-		fontWeight: 'bold'
+		fontWeight: 'bold',
+		marginTop: 6
 	},
 	items: {
 		overflow: 'hidden'
+	},
+	itemContainer: {
+		backgroundColor: 'white',
+		flexDirection: 'row',
+		justifyContent: 'space-between',
+		alignItems: 'center',
+		paddingTop: 10,
+		borderTopWidth: 2,
+		width: 250,
+		paddingHorizontal: 0,
+		borderColor: '#f4f4f6',
+		height: 45
+	},
+	name: {
+		fontSize: 24,
+		fontWeight: 'bold',
+		color: '#C4353E'
+	},
+	pointsContainer: {
+		borderRadius: 8,
+		backgroundColor: '#44c282',
+		padding: 8
+	},
+	points: {
+		color: 'white',
+		fontWeight: 'bold'
 	}
 });
 
