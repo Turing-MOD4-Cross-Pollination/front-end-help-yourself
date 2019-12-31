@@ -9,7 +9,7 @@ export const getAllData = () => {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ query })
   };
-  console.log('BASE===>',`${baseUrl}`)
+  
   return fetch(`${baseUrl}`, opts)
     .then(res => res.json())
     .catch(error=>console.log(error));
