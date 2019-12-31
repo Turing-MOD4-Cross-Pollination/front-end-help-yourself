@@ -11,10 +11,11 @@ import ForMeScreen from './components/ForMeScreen';
 import NearMeScreen from './components/NearMeScreen';
 import NowScreen from './components/NowScreen';
 import loading from './assets/splash.png'
-
 import rootReducer from './reducers';
+import { getAllData } from './util/apiCalls';
 
 const store = createStore(rootReducer, applyMiddleware(logger))
+
 
 const MainNavigator = createStackNavigator({
 	Home: { screen: HomeScreen },
@@ -25,55 +26,55 @@ const MainNavigator = createStackNavigator({
 
 const AppContainer = createAppContainer(MainNavigator);
 
-class App extends Component{
-	constructor(){
-		super()
-		this.state = {
-			hasData: false,
-			isLoaded: false
-		};
-	}
-	componentDidMount = async () => {
-    // if(NetInfo.isInternetReachable){
-		// 	this.setState({ hasData:true })
-		// }
-		this.InternetCheck()
+class App extends Component {
+  constructor() {
+		super();
+    this.state = {
+      hasData: false,
+			isLoaded: false,
+			data:[]
+    };
+  }
+  componentDidMount = () => {
+    this.InternetCheck();
+  };
+
+  InternetCheck = () => {
+			NetInfo.fetch().then(state => {
+				if (!state.isConnected) {
+					  console.warn('PLEASE CONNECT TO INTERNET');
+					} else {
+					  this.setState({hasData:true})
+						//navigate to page or Call API
+						this.getDataWithConnection()
+					}
+				// console.log("Connection type", state.type);
+				// console.log("Is connected?", state.isConnected);
+			}); 
+  };
+
+	getDataWithConnection = async() => {
+		let response = await getAllData();
+		this.setState({ data:response.data.resources, isLoaded:true })
 	}
 
-	InternetCheck = async () => {
-    const connectionInfo = await NetInfo.getConnectionInfo();
-    if (connectionInfo.type === 'none') {
-			alert('PLEASE CONNECT TO INTERNET');
+  render = () => {
+		const { hasData, isLoaded} = this.state;
+    if (!hasData || isLoaded) {
+      return (
+        <Provider store={store}>
+          <AppContainer />
+        </Provider>
+      );
     } else {
-			this.setState({hasData:true})
-            //navigate to page or Call API
+      return (
+        <>
+          <Text>Loading Image</Text>
+          <Image source={loading} />
+        </>
+      );
     }
+  };
 }
-
-
-
-
-	render = ()=>{
-		if (!this.state.hasData){
-			return(
-				<Provider store={store}>
-					<AppContainer />
-				</Provider>
-			)
-		} else {
-			return (
-				<>
-				<Text>
-					Loading
-					</Text>
-					<Image source={loading} />
-				</>)
-		}
-
-
-
-	}
-}
-
 
 export default App;
