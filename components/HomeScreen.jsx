@@ -8,7 +8,7 @@ class HomeScreen extends Component {
 		headerStyle: {
 			backgroundColor: '#fff'
 		},
-		headerTintColor: '#0B306F',
+		headerTintColor: '#102b59',
 		headerTitleStyle: {
 			fontWeight: 'bold'
 		}
@@ -32,7 +32,7 @@ class HomeScreen extends Component {
 							style={{ width: '45%' }}
 							onPress={() => navigate('Now')}>
 							<View style={styles.buttonNow} title='This is a button'>
-								<Text style={{ color: 'white', ...styles.buttonText }}>
+								<Text style={{ ...styles.buttonText, color: 'white' }}>
 									Now
 								</Text>
 							</View>
@@ -61,7 +61,7 @@ class HomeScreen extends Component {
 
 const styles = StyleSheet.create({
 	container: {
-		backgroundColor: '#0B306F',
+		backgroundColor: '#102b59',
 		alignItems: 'center',
 		justifyContent: 'center',
 		padding: 10,
@@ -72,66 +72,84 @@ const styles = StyleSheet.create({
 		width: '100%'
 	},
 	buttonNow: {
-		height: 160,
+		height: 130,
 		display: 'flex',
-		borderWidth: 4,
-		borderColor: 'white',
 		justifyContent: 'center',
 		alignItems: 'center',
-		width: '100%',
+		width: '97%',
 		backgroundColor: '#d62934',
-		borderTopLeftRadius: 12,
-		borderBottomWidth: 2,
-		borderRightWidth: 2
+		borderRadius: 10,
+		shadowColor: '#000',
+		shadowOffset: {
+			width: 0,
+			height: 3
+		},
+		shadowOpacity: 0.3,
+		shadowRadius: 4.65,
+
+		elevation: 7
 	},
 	buttonNearMe: {
-		height: 160,
-		width: '100%',
-		borderWidth: 4,
-		borderColor: 'white',
+		height: 130,
+		width: '97%',
+		marginLeft: 6,
 		display: 'flex',
 		justifyContent: 'center',
 		alignItems: 'center',
-		backgroundColor: '#ffdb1c',
-		borderTopRightRadius: 12,
-		borderBottomWidth: 2,
-		borderLeftWidth: 2
+		backgroundColor: '#fff',
+		borderRadius: 10,
+		shadowColor: '#000',
+		shadowOffset: {
+			width: 0,
+			height: 3
+		},
+		shadowOpacity: 0.3,
+		shadowRadius: 4.65,
+
+		elevation: 7
 	},
 	buttonForMe: {
-		height: 170,
-		borderColor: 'white',
-		borderWidth: 4,
-		borderTopWidth: 2,
+		height: 130,
 		display: 'flex',
 		justifyContent: 'center',
 		alignItems: 'center',
 		width: '90%',
-		backgroundColor: '#ffdb1c',
-		borderBottomRightRadius: 12,
-		borderBottomLeftRadius: 12
+		backgroundColor: '#fff',
+		borderRadius: 10,
+		shadowColor: '#000',
+		shadowOffset: {
+			width: 0,
+			height: 3
+		},
+		shadowOpacity: 0.3,
+		shadowRadius: 4.65,
+
+		elevation: 7
 	},
 	row: {
 		flexDirection: 'row',
 		width: '90%',
 		justifyContent: 'center',
-		alignItems: 'center'
+		alignItems: 'center',
+		marginBottom: 10
 	},
 	buttonText: {
 		fontSize: 45,
 		fontWeight: '600',
-		textAlign: 'center'
+		textAlign: 'center',
+		color: '#102b59'
 	},
 	line: {
 		width: '83%',
 		backgroundColor: 'white',
-		height: 4,
-		marginBottom: 90
+		height: 1.5,
+		marginBottom: 98
 	},
 	logoContainer: {
 		backgroundColor: 'white',
 		width: '100%',
 		height: 80,
-		marginBottom: 80,
+		marginBottom: 102,
 		display: 'flex',
 		justifyContent: 'center',
 		alignItems: 'center',
@@ -143,7 +161,7 @@ const styles = StyleSheet.create({
 		marginLeft: 160,
 		fontWeight: '700',
 		height: 43,
-		color: '#0B306F',
+		color: '#102b59',
 		letterSpacing: 1.6
 	},
 	logoImage: {
