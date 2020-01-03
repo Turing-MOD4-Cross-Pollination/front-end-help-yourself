@@ -18,34 +18,28 @@ const ForMeScreen = props => {
 	const [open, setOpen] = useState(false);
 
 	return (
-		<View style={styles.container}>
-			<TouchableWithoutFeedback
-				style={styles.container}
-				onPress={() => setOpen(prev => !prev)}>
-				<View style={styles.accordian}>
-					<ForMeList list={categories} title='Resources' />
-					{/* {list} */}
-				</View>
-			</TouchableWithoutFeedback>
-
-			<View style={styles.nav}>
-				<TouchableOpacity onPress={() => props.navigation.navigate('Now')}>
-					<Text>Now</Text>
-				</TouchableOpacity>
-				<TouchableOpacity onPress={() => props.navigation.navigate('NearMe')}>
-					<Text>Near Me</Text>
-				</TouchableOpacity>
+		<>
+			<Text style={styles.header}>My Resources</Text>
+			<View style={styles.container}>
+				<TouchableWithoutFeedback
+					style={styles.container}
+					onPress={() => setOpen(prev => !prev)}>
+					<View style={styles.accordian}>
+						<ForMeList list={categories} title='Resources' />
+						{/* {list} */}
+					</View>
+				</TouchableWithoutFeedback>
 			</View>
-		</View>
+		</>
 	);
 };
 
 ForMeScreen.navigationOptions = ({ navigation }) => ({
 	title: 'For Me',
 	headerStyle: {
-		backgroundColor: '#0B306F'
+		backgroundColor: '#fff'
 	},
-	headerTintColor: '#fff',
+	headerTintColor: '#102b59',
 	headerTitleStyle: {
 		fontWeight: 'bold'
 	},
@@ -57,10 +51,12 @@ ForMeScreen.navigationOptions = ({ navigation }) => ({
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: '#fff',
-		alignItems: 'flex-start',
+		backgroundColor: '#102b59',
+		alignItems: 'center',
 		justifyContent: 'center',
-		height: '100%'
+		height: '100%',
+		paddingLeft: 15,
+		paddingRight: 15
 	},
 	button: {
 		height: '40%',
@@ -76,6 +72,16 @@ const styles = StyleSheet.create({
 		width: '100%',
 		justifyContent: 'space-between',
 		padding: 10
+	},
+	header: {
+		fontSize: 32,
+		paddingBottom: 10,
+		paddingTop: 20,
+		paddingRight: 15,
+		paddingLeft: 15,
+		backgroundColor: '#102b59',
+		color: 'white',
+		fontWeight: 'bold'
 	}
 });
 

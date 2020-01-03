@@ -12,7 +12,7 @@ const { not, interpolate } = Animated;
 import Chevron from './Chevron';
 
 const EmergencyItem = ({ resource }) => {
-	const LIST_ITEM_HEIGHT = 52;
+	const LIST_ITEM_HEIGHT = 60;
 	const [open, setOpen] = useState(false);
 
 	const transition = useTimingTransition(
@@ -70,10 +70,7 @@ const styles = StyleSheet.create({
 		borderColor: 'lightgray',
 		backgroundColor: 'white',
 		padding: 5,
-		borderTopLeftRadius: 8,
-		borderTopRightRadius: 8,
-		borderBottomLeftRadius: 8,
-		borderBottomRightRadius: 8,
+		borderRadius: 8,
 		flexDirection: 'column',
 		alignItems: 'flex-start',
 		justifyContent: 'space-between',
@@ -88,9 +85,11 @@ const styles = StyleSheet.create({
 		width: '100%'
 	},
 	title: {
-		fontSize: 16,
+		fontSize: 18,
 		fontWeight: 'bold',
-		marginTop: 6
+		paddingTop: 6,
+		width: '85%',
+		paddingBottom: 6
 	},
 	items: {
 		overflow: 'hidden'
@@ -105,10 +104,10 @@ const styles = StyleSheet.create({
 		width: 250,
 		paddingHorizontal: 0,
 		borderColor: '#f4f4f6',
-		height: 45
+		height: 55
 	},
 	name: {
-		fontSize: 24,
+		fontSize: 30,
 		fontWeight: 'bold',
 		color: '#C4353E'
 	},
