@@ -23,9 +23,14 @@ class HomeScreen extends Component {
 							source={require('../../assets/logo.png')}
 							style={styles.logoImage}
 						/>
-						<Text style={styles.logoText}>mmunity</Text>
-						<Text style={styles.logoText}>nnect</Text>
+						<Text style={styles.logoText}>community</Text>
+						<Text style={{ ...styles.logoText, marginTop: -20 }}>connect</Text>
 					</View>
+					<Text style={styles.colorado}>COLORADO</Text>
+					<Text style={styles.summary}>
+						Find all resources available and make them your own for fast and
+						easy access.
+					</Text>
 					<View style={styles.line}></View>
 					<View style={styles.row}>
 						<TouchableOpacity
@@ -49,7 +54,9 @@ class HomeScreen extends Component {
 						style={{ marginLeft: 37, width: '90%' }}
 						onPress={() => navigate('ForMe')}>
 						<View style={styles.buttonForMe} title='This is a button'>
-							<Text style={{ ...styles.buttonText, fontSize: 60 }}>For Me</Text>
+							<Text style={{ ...styles.buttonText, fontSize: 44 }}>
+								My Resources
+							</Text>
 						</View>
 					</TouchableOpacity>
 				</View>
@@ -78,7 +85,7 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		width: '97%',
 		backgroundColor: '#d62934',
-		borderRadius: 10,
+		borderRadius: 12,
 		shadowColor: '#000',
 		shadowOffset: {
 			width: 0,
@@ -97,7 +104,7 @@ const styles = StyleSheet.create({
 		justifyContent: 'center',
 		alignItems: 'center',
 		backgroundColor: '#fff',
-		borderRadius: 10,
+		borderRadius: 12,
 		shadowColor: '#000',
 		shadowOffset: {
 			width: 0,
@@ -115,7 +122,7 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		width: '90%',
 		backgroundColor: '#fff',
-		borderRadius: 10,
+		borderRadius: 12,
 		shadowColor: '#000',
 		shadowOffset: {
 			width: 0,
@@ -141,36 +148,50 @@ const styles = StyleSheet.create({
 	},
 	line: {
 		width: '83%',
-		backgroundColor: 'white',
+		backgroundColor: 'darkgray',
 		height: 1.5,
-		marginBottom: 98
+		marginBottom: 80
 	},
 	logoContainer: {
 		backgroundColor: 'white',
 		width: '100%',
-		height: 80,
-		marginBottom: 102,
+		height: 70,
+		marginBottom: 60,
 		display: 'flex',
 		justifyContent: 'center',
 		alignItems: 'center',
-		paddingBottom: 8
+		paddingBottom: 4
 	},
 	logoText: {
 		fontSize: 40,
-		width: 200,
+		width: 230,
 		marginLeft: 160,
 		fontWeight: '700',
-		height: 43,
+		height: 50,
 		color: '#102b59',
-		letterSpacing: 1.6
+		letterSpacing: -1
 	},
 	logoImage: {
 		height: 140,
 		width: 140,
 		position: 'absolute',
 		alignSelf: 'center',
-		top: '-45%',
-		right: '56%'
+		top: '-54%',
+		right: '61%'
+	},
+	colorado: {
+		fontSize: 28,
+		color: 'white',
+		marginBottom: 10,
+		fontWeight: 'bold'
+	},
+	summary: {
+		color: 'white',
+		width: '83%',
+		fontSize: 18,
+		marginBottom: 40,
+		textAlign: 'center',
+		opacity: 0.7
 	}
 });
 
