@@ -1,0 +1,9 @@
+d603f8be5356c2c471a890c5d6340a96
+module.exports = {
+  trueFunc: function trueFunc() {
+    return true;
+  },
+  falseFunc: function falseFunc() {
+    return false;
+  }
+};

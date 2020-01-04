@@ -1,0 +1,6 @@
+62565f70062b08c235827aa9407e2fda
+function _nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance");
+}
+
+module.exports = _nonIterableRest;

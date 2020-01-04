@@ -1,0 +1,13 @@
+5235aaa6498e3503b0816c1ab72b0818
+'use strict';
+
+var ES5Type = require('../5/Type'); // https://www.ecma-international.org/ecma-262/6.0/#sec-tostring
+
+
+module.exports = function Type(x) {
+  if (typeof x === 'symbol') {
+    return 'Symbol';
+  }
+
+  return ES5Type(x);
+};

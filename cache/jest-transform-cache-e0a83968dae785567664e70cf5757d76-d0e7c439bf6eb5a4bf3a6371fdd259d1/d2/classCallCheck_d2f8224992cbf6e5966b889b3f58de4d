@@ -1,0 +1,8 @@
+cc104007c4b1ac323ad137cdd4663ed9
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+module.exports = _classCallCheck;
