@@ -1,0 +1,6 @@
+4ce5b8232c3e3cb1ee5a383da17d0184
+'use strict';
+
+module.exports = function sign(number) {
+  return number >= 0 ? 1 : -1;
+};

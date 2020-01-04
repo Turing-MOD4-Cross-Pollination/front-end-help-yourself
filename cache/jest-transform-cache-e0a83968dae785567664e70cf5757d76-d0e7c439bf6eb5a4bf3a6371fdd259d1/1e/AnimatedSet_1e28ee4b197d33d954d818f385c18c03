@@ -1,0 +1,61 @@
+7ccbce63d850a7c1fdb3f12a189e5fbd
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.createAnimatedSet = createAnimatedSet;
+
+var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
+
+var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
+
+var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
+
+var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
+
+var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
+
+var _AnimatedNode2 = _interopRequireDefault(require("./AnimatedNode"));
+
+var _val = require("../val");
+
+var _AnimatedBlock = require("../core/AnimatedBlock");
+
+var _invariant = _interopRequireDefault(require("fbjs/lib/invariant"));
+
+var AnimatedSet = function (_AnimatedNode) {
+  (0, _inherits2.default)(AnimatedSet, _AnimatedNode);
+
+  function AnimatedSet(what, value) {
+    var _this;
+
+    (0, _classCallCheck2.default)(this, AnimatedSet);
+    _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(AnimatedSet).call(this, {
+      type: 'set',
+      what: what.__nodeID,
+      value: value.__nodeID
+    }, [value]));
+    (0, _invariant.default)(!what._constant, 'Value to be set cannot be constant');
+    _this._what = what;
+    _this._value = value;
+    return _this;
+  }
+
+  (0, _createClass2.default)(AnimatedSet, [{
+    key: "__onEvaluate",
+    value: function __onEvaluate() {
+      var newValue = (0, _val.val)(this._value);
+
+      this._what._updateValue(newValue);
+
+      return newValue;
+    }
+  }]);
+  return AnimatedSet;
+}(_AnimatedNode2.default);
+
+function createAnimatedSet(what, value) {
+  return new AnimatedSet(what, (0, _AnimatedBlock.adapt)(value));
+}
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkFuaW1hdGVkU2V0LmpzIl0sIm5hbWVzIjpbIkFuaW1hdGVkU2V0Iiwid2hhdCIsInZhbHVlIiwidHlwZSIsIl9fbm9kZUlEIiwiX2NvbnN0YW50IiwiX3doYXQiLCJfdmFsdWUiLCJuZXdWYWx1ZSIsIl91cGRhdGVWYWx1ZSIsIkFuaW1hdGVkTm9kZSIsImNyZWF0ZUFuaW1hdGVkU2V0Il0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7OztBQUFBOztBQUNBOztBQUNBOztBQUVBOztJQUVNQSxXOzs7QUFJSix1QkFBWUMsSUFBWixFQUFrQkMsS0FBbEIsRUFBeUI7QUFBQTs7QUFBQTtBQUN2QixpSEFBTTtBQUFFQyxNQUFBQSxJQUFJLEVBQUUsS0FBUjtBQUFlRixNQUFBQSxJQUFJLEVBQUVBLElBQUksQ0FBQ0csUUFBMUI7QUFBb0NGLE1BQUFBLEtBQUssRUFBRUEsS0FBSyxDQUFDRTtBQUFqRCxLQUFOLEVBQW1FLENBQUNGLEtBQUQsQ0FBbkU7QUFDQSw0QkFBVSxDQUFDRCxJQUFJLENBQUNJLFNBQWhCLEVBQTJCLG9DQUEzQjtBQUNBLFVBQUtDLEtBQUwsR0FBYUwsSUFBYjtBQUNBLFVBQUtNLE1BQUwsR0FBY0wsS0FBZDtBQUp1QjtBQUt4Qjs7OzttQ0FFYztBQUNiLFVBQU1NLFFBQVEsR0FBRyxjQUFJLEtBQUtELE1BQVQsQ0FBakI7O0FBQ0EsV0FBS0QsS0FBTCxDQUFXRyxZQUFYLENBQXdCRCxRQUF4Qjs7QUFDQSxhQUFPQSxRQUFQO0FBQ0Q7OztFQWZ1QkUsc0I7O0FBa0JuQixTQUFTQyxpQkFBVCxDQUEyQlYsSUFBM0IsRUFBaUNDLEtBQWpDLEVBQXdDO0FBQzdDLFNBQU8sSUFBSUYsV0FBSixDQUFnQkMsSUFBaEIsRUFBc0IsMEJBQU1DLEtBQU4sQ0FBdEIsQ0FBUDtBQUNEIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IEFuaW1hdGVkTm9kZSBmcm9tICcuL0FuaW1hdGVkTm9kZSc7XG5pbXBvcnQgeyB2YWwgfSBmcm9tICcuLi92YWwnO1xuaW1wb3J0IHsgYWRhcHQgfSBmcm9tICcuLi9jb3JlL0FuaW1hdGVkQmxvY2snO1xuXG5pbXBvcnQgaW52YXJpYW50IGZyb20gJ2ZianMvbGliL2ludmFyaWFudCc7XG5cbmNsYXNzIEFuaW1hdGVkU2V0IGV4dGVuZHMgQW5pbWF0ZWROb2RlIHtcbiAgX3doYXQ7XG4gIF92YWx1ZTtcblxuICBjb25zdHJ1Y3Rvcih3aGF0LCB2YWx1ZSkge1xuICAgIHN1cGVyKHsgdHlwZTogJ3NldCcsIHdoYXQ6IHdoYXQuX19ub2RlSUQsIHZhbHVlOiB2YWx1ZS5fX25vZGVJRCB9LCBbdmFsdWVdKTtcbiAgICBpbnZhcmlhbnQoIXdoYXQuX2NvbnN0YW50LCAnVmFsdWUgdG8gYmUgc2V0IGNhbm5vdCBiZSBjb25zdGFudCcpO1xuICAgIHRoaXMuX3doYXQgPSB3aGF0O1xuICAgIHRoaXMuX3ZhbHVlID0gdmFsdWU7XG4gIH1cblxuICBfX29uRXZhbHVhdGUoKSB7XG4gICAgY29uc3QgbmV3VmFsdWUgPSB2YWwodGhpcy5fdmFsdWUpO1xuICAgIHRoaXMuX3doYXQuX3VwZGF0ZVZhbHVlKG5ld1ZhbHVlKTtcbiAgICByZXR1cm4gbmV3VmFsdWU7XG4gIH1cbn1cblxuZXhwb3J0IGZ1bmN0aW9uIGNyZWF0ZUFuaW1hdGVkU2V0KHdoYXQsIHZhbHVlKSB7XG4gIHJldHVybiBuZXcgQW5pbWF0ZWRTZXQod2hhdCwgYWRhcHQodmFsdWUpKTtcbn1cbiJdfQ==

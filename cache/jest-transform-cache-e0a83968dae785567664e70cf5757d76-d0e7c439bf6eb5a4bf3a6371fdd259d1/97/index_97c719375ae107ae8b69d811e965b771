@@ -1,0 +1,57 @@
+473de56b9318391be5b8217ca55efbe3
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
+  return typeof obj;
+} : function (obj) {
+  return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+};
+
+exports['default'] = shallowEqual;
+
+var _objectIs = require('object-is');
+
+var _objectIs2 = _interopRequireDefault(_objectIs);
+
+var _has = require('has');
+
+var _has2 = _interopRequireDefault(_has);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    'default': obj
+  };
+} // adapted from https://github.com/facebook/react/blob/144328fe81719e916b946e22660479e31561bb0b/packages/shared/shallowEqual.js#L36-L68
+
+
+function shallowEqual(objA, objB) {
+  if ((0, _objectIs2['default'])(objA, objB)) {
+    return true;
+  }
+
+  if (!objA || !objB || (typeof objA === 'undefined' ? 'undefined' : _typeof(objA)) !== 'object' || (typeof objB === 'undefined' ? 'undefined' : _typeof(objB)) !== 'object') {
+    return false;
+  }
+
+  var keysA = Object.keys(objA);
+  var keysB = Object.keys(objB);
+
+  if (keysA.length !== keysB.length) {
+    return false;
+  }
+
+  keysA.sort();
+  keysB.sort(); // Test for A's keys different from B.
+
+  for (var i = 0; i < keysA.length; i += 1) {
+    if (!(0, _has2['default'])(objB, keysA[i]) || !(0, _objectIs2['default'])(objA[keysA[i]], objB[keysA[i]])) {
+      return false;
+    }
+  }
+
+  return true;
+} //# sourceMappingURL=index.js.map

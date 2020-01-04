@@ -1,0 +1,62 @@
+da2587b76e94c8ea65eb0425e44a03db
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.atan = exports.asin = exports.acos = exports.tan = exports.not = exports.defined = exports.or = exports.and = exports.neq = exports.greaterOrEq = exports.lessOrEq = exports.greaterThan = exports.eq = exports.lessThan = exports.round = exports.exp = exports.cos = exports.sin = exports.log = exports.sqrt = exports.modulo = exports.pow = exports.divide = exports.multiply = exports.sub = exports.add = void 0;
+
+var _AnimatedOperator = require("./core/AnimatedOperator");
+
+var operator = _AnimatedOperator.createAnimatedOperator;
+var add = operator('add');
+exports.add = add;
+var sub = operator('sub');
+exports.sub = sub;
+var multiply = operator('multiply');
+exports.multiply = multiply;
+var divide = operator('divide');
+exports.divide = divide;
+var pow = operator('pow');
+exports.pow = pow;
+var modulo = operator('modulo');
+exports.modulo = modulo;
+var sqrt = operator('sqrt');
+exports.sqrt = sqrt;
+var log = operator('log');
+exports.log = log;
+var sin = operator('sin');
+exports.sin = sin;
+var cos = operator('cos');
+exports.cos = cos;
+var exp = operator('exp');
+exports.exp = exp;
+var round = operator('round');
+exports.round = round;
+var lessThan = operator('lessThan');
+exports.lessThan = lessThan;
+var eq = operator('eq');
+exports.eq = eq;
+var greaterThan = operator('greaterThan');
+exports.greaterThan = greaterThan;
+var lessOrEq = operator('lessOrEq');
+exports.lessOrEq = lessOrEq;
+var greaterOrEq = operator('greaterOrEq');
+exports.greaterOrEq = greaterOrEq;
+var neq = operator('neq');
+exports.neq = neq;
+var and = operator('and');
+exports.and = and;
+var or = operator('or');
+exports.or = or;
+var defined = operator('defined');
+exports.defined = defined;
+var not = operator('not');
+exports.not = not;
+var tan = operator('tan');
+exports.tan = tan;
+var acos = operator('acos');
+exports.acos = acos;
+var asin = operator('asin');
+exports.asin = asin;
+var atan = operator('atan');
+exports.atan = atan;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm9wZXJhdG9ycy5qcyJdLCJuYW1lcyI6WyJvcGVyYXRvciIsImNyZWF0ZUFuaW1hdGVkT3BlcmF0b3IiLCJhZGQiLCJzdWIiLCJtdWx0aXBseSIsImRpdmlkZSIsInBvdyIsIm1vZHVsbyIsInNxcnQiLCJsb2ciLCJzaW4iLCJjb3MiLCJleHAiLCJyb3VuZCIsImxlc3NUaGFuIiwiZXEiLCJncmVhdGVyVGhhbiIsImxlc3NPckVxIiwiZ3JlYXRlck9yRXEiLCJuZXEiLCJhbmQiLCJvciIsImRlZmluZWQiLCJub3QiLCJ0YW4iLCJhY29zIiwiYXNpbiIsImF0YW4iXSwibWFwcGluZ3MiOiI7Ozs7O0FBQUE7O0FBRUEsSUFBTUEsUUFBUSxHQUFHQyx3Q0FBakI7QUFFTyxJQUFNQyxHQUFHLEdBQUdGLFFBQVEsQ0FBQyxLQUFELENBQXBCOztBQUNBLElBQU1HLEdBQUcsR0FBR0gsUUFBUSxDQUFDLEtBQUQsQ0FBcEI7O0FBQ0EsSUFBTUksUUFBUSxHQUFHSixRQUFRLENBQUMsVUFBRCxDQUF6Qjs7QUFDQSxJQUFNSyxNQUFNLEdBQUdMLFFBQVEsQ0FBQyxRQUFELENBQXZCOztBQUNBLElBQU1NLEdBQUcsR0FBR04sUUFBUSxDQUFDLEtBQUQsQ0FBcEI7O0FBQ0EsSUFBTU8sTUFBTSxHQUFHUCxRQUFRLENBQUMsUUFBRCxDQUF2Qjs7QUFDQSxJQUFNUSxJQUFJLEdBQUdSLFFBQVEsQ0FBQyxNQUFELENBQXJCOztBQUNBLElBQU1TLEdBQUcsR0FBR1QsUUFBUSxDQUFDLEtBQUQsQ0FBcEI7O0FBQ0EsSUFBTVUsR0FBRyxHQUFHVixRQUFRLENBQUMsS0FBRCxDQUFwQjs7QUFDQSxJQUFNVyxHQUFHLEdBQUdYLFFBQVEsQ0FBQyxLQUFELENBQXBCOztBQUNBLElBQU1ZLEdBQUcsR0FBR1osUUFBUSxDQUFDLEtBQUQsQ0FBcEI7O0FBQ0EsSUFBTWEsS0FBSyxHQUFHYixRQUFRLENBQUMsT0FBRCxDQUF0Qjs7QUFDQSxJQUFNYyxRQUFRLEdBQUdkLFFBQVEsQ0FBQyxVQUFELENBQXpCOztBQUNBLElBQU1lLEVBQUUsR0FBR2YsUUFBUSxDQUFDLElBQUQsQ0FBbkI7O0FBQ0EsSUFBTWdCLFdBQVcsR0FBR2hCLFFBQVEsQ0FBQyxhQUFELENBQTVCOztBQUNBLElBQU1pQixRQUFRLEdBQUdqQixRQUFRLENBQUMsVUFBRCxDQUF6Qjs7QUFDQSxJQUFNa0IsV0FBVyxHQUFHbEIsUUFBUSxDQUFDLGFBQUQsQ0FBNUI7O0FBQ0EsSUFBTW1CLEdBQUcsR0FBR25CLFFBQVEsQ0FBQyxLQUFELENBQXBCOztBQUNBLElBQU1vQixHQUFHLEdBQUdwQixRQUFRLENBQUMsS0FBRCxDQUFwQjs7QUFDQSxJQUFNcUIsRUFBRSxHQUFHckIsUUFBUSxDQUFDLElBQUQsQ0FBbkI7O0FBQ0EsSUFBTXNCLE9BQU8sR0FBR3RCLFFBQVEsQ0FBQyxTQUFELENBQXhCOztBQUNBLElBQU11QixHQUFHLEdBQUd2QixRQUFRLENBQUMsS0FBRCxDQUFwQjs7QUFDQSxJQUFNd0IsR0FBRyxHQUFHeEIsUUFBUSxDQUFDLEtBQUQsQ0FBcEI7O0FBQ0EsSUFBTXlCLElBQUksR0FBR3pCLFFBQVEsQ0FBQyxNQUFELENBQXJCOztBQUNBLElBQU0wQixJQUFJLEdBQUcxQixRQUFRLENBQUMsTUFBRCxDQUFyQjs7QUFDQSxJQUFNMkIsSUFBSSxHQUFHM0IsUUFBUSxDQUFDLE1BQUQsQ0FBckIiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBjcmVhdGVBbmltYXRlZE9wZXJhdG9yIH0gZnJvbSAnLi9jb3JlL0FuaW1hdGVkT3BlcmF0b3InO1xuXG5jb25zdCBvcGVyYXRvciA9IGNyZWF0ZUFuaW1hdGVkT3BlcmF0b3I7XG5cbmV4cG9ydCBjb25zdCBhZGQgPSBvcGVyYXRvcignYWRkJyk7XG5leHBvcnQgY29uc3Qgc3ViID0gb3BlcmF0b3IoJ3N1YicpO1xuZXhwb3J0IGNvbnN0IG11bHRpcGx5ID0gb3BlcmF0b3IoJ211bHRpcGx5Jyk7XG5leHBvcnQgY29uc3QgZGl2aWRlID0gb3BlcmF0b3IoJ2RpdmlkZScpO1xuZXhwb3J0IGNvbnN0IHBvdyA9IG9wZXJhdG9yKCdwb3cnKTtcbmV4cG9ydCBjb25zdCBtb2R1bG8gPSBvcGVyYXRvcignbW9kdWxvJyk7XG5leHBvcnQgY29uc3Qgc3FydCA9IG9wZXJhdG9yKCdzcXJ0Jyk7XG5leHBvcnQgY29uc3QgbG9nID0gb3BlcmF0b3IoJ2xvZycpO1xuZXhwb3J0IGNvbnN0IHNpbiA9IG9wZXJhdG9yKCdzaW4nKTtcbmV4cG9ydCBjb25zdCBjb3MgPSBvcGVyYXRvcignY29zJyk7XG5leHBvcnQgY29uc3QgZXhwID0gb3BlcmF0b3IoJ2V4cCcpO1xuZXhwb3J0IGNvbnN0IHJvdW5kID0gb3BlcmF0b3IoJ3JvdW5kJyk7XG5leHBvcnQgY29uc3QgbGVzc1RoYW4gPSBvcGVyYXRvcignbGVzc1RoYW4nKTtcbmV4cG9ydCBjb25zdCBlcSA9IG9wZXJhdG9yKCdlcScpO1xuZXhwb3J0IGNvbnN0IGdyZWF0ZXJUaGFuID0gb3BlcmF0b3IoJ2dyZWF0ZXJUaGFuJyk7XG5leHBvcnQgY29uc3QgbGVzc09yRXEgPSBvcGVyYXRvcignbGVzc09yRXEnKTtcbmV4cG9ydCBjb25zdCBncmVhdGVyT3JFcSA9IG9wZXJhdG9yKCdncmVhdGVyT3JFcScpO1xuZXhwb3J0IGNvbnN0IG5lcSA9IG9wZXJhdG9yKCduZXEnKTtcbmV4cG9ydCBjb25zdCBhbmQgPSBvcGVyYXRvcignYW5kJyk7XG5leHBvcnQgY29uc3Qgb3IgPSBvcGVyYXRvcignb3InKTtcbmV4cG9ydCBjb25zdCBkZWZpbmVkID0gb3BlcmF0b3IoJ2RlZmluZWQnKTtcbmV4cG9ydCBjb25zdCBub3QgPSBvcGVyYXRvcignbm90Jyk7XG5leHBvcnQgY29uc3QgdGFuID0gb3BlcmF0b3IoJ3RhbicpO1xuZXhwb3J0IGNvbnN0IGFjb3MgPSBvcGVyYXRvcignYWNvcycpO1xuZXhwb3J0IGNvbnN0IGFzaW4gPSBvcGVyYXRvcignYXNpbicpO1xuZXhwb3J0IGNvbnN0IGF0YW4gPSBvcGVyYXRvcignYXRhbicpO1xuIl19

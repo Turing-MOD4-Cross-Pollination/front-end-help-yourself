@@ -1,0 +1,58 @@
+f7e619b0309b0a7ad034e26357248ffd
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
+
+var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
+
+var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
+
+var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
+
+var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
+
+var _AnimatedSet = require("../core/AnimatedSet");
+
+var _interpolate2 = _interopRequireDefault(require("../derived/interpolate"));
+
+var _InternalAnimatedValue = _interopRequireDefault(require("./InternalAnimatedValue"));
+
+var _evaluateOnce = require("../derived/evaluateOnce");
+
+var _reactNative = require("react-native");
+
+var AnimatedValue = function (_InternalAnimatedValu) {
+  (0, _inherits2.default)(AnimatedValue, _InternalAnimatedValu);
+
+  function AnimatedValue() {
+    (0, _classCallCheck2.default)(this, AnimatedValue);
+    return (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(AnimatedValue).apply(this, arguments));
+  }
+
+  (0, _createClass2.default)(AnimatedValue, [{
+    key: "setValue",
+    value: function setValue(value) {
+      this.__detachAnimation(this._animation);
+
+      if (_reactNative.Platform.OS === 'web') {
+        this._updateValue(value);
+      } else {
+        (0, _evaluateOnce.evaluateOnce)((0, _AnimatedSet.createAnimatedSet)(this, value), this);
+      }
+    }
+  }, {
+    key: "interpolate",
+    value: function interpolate(config) {
+      return (0, _interpolate2.default)(this, config);
+    }
+  }]);
+  return AnimatedValue;
+}(_InternalAnimatedValue.default);
+
+exports.default = AnimatedValue;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkFuaW1hdGVkVmFsdWUuanMiXSwibmFtZXMiOlsiQW5pbWF0ZWRWYWx1ZSIsInZhbHVlIiwiX19kZXRhY2hBbmltYXRpb24iLCJfYW5pbWF0aW9uIiwiUGxhdGZvcm0iLCJPUyIsIl91cGRhdGVWYWx1ZSIsImNvbmZpZyIsIkludGVybmFsQW5pbWF0ZWRWYWx1ZSJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQTs7QUFDQTs7QUFDQTs7QUFDQTs7QUFDQTs7SUFHcUJBLGE7Ozs7Ozs7Ozs7NkJBQ1ZDLEssRUFBTztBQUNkLFdBQUtDLGlCQUFMLENBQXVCLEtBQUtDLFVBQTVCOztBQUNBLFVBQUlDLHNCQUFTQyxFQUFULEtBQWdCLEtBQXBCLEVBQTJCO0FBQ3pCLGFBQUtDLFlBQUwsQ0FBa0JMLEtBQWxCO0FBQ0QsT0FGRCxNQUVPO0FBQ0wsd0NBQWEsb0NBQUksSUFBSixFQUFVQSxLQUFWLENBQWIsRUFBK0IsSUFBL0I7QUFDRDtBQUNGOzs7Z0NBRVdNLE0sRUFBUTtBQUNsQixhQUFPLDJCQUFZLElBQVosRUFBa0JBLE1BQWxCLENBQVA7QUFDRDs7O0VBWndDQyw4QiIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IGNyZWF0ZUFuaW1hdGVkU2V0IGFzIHNldCB9IGZyb20gJy4uL2NvcmUvQW5pbWF0ZWRTZXQnO1xuaW1wb3J0IGludGVycG9sYXRlIGZyb20gJy4uL2Rlcml2ZWQvaW50ZXJwb2xhdGUnO1xuaW1wb3J0IEludGVybmFsQW5pbWF0ZWRWYWx1ZSBmcm9tICcuL0ludGVybmFsQW5pbWF0ZWRWYWx1ZSc7XG5pbXBvcnQgeyBldmFsdWF0ZU9uY2UgfSBmcm9tICcuLi9kZXJpdmVkL2V2YWx1YXRlT25jZSc7XG5pbXBvcnQgeyBQbGF0Zm9ybSB9IGZyb20gJ3JlYWN0LW5hdGl2ZSc7XG5cbi8vIEFuaW1hdGVkIHZhbHVlIHdyYXBwZWQgd2l0aCBleHRyYSBtZXRob2RzIGZvciBvbWl0IGN5Y2xlIG9mIGRlcGVuZGVuY2llc1xuZXhwb3J0IGRlZmF1bHQgY2xhc3MgQW5pbWF0ZWRWYWx1ZSBleHRlbmRzIEludGVybmFsQW5pbWF0ZWRWYWx1ZSB7XG4gIHNldFZhbHVlKHZhbHVlKSB7XG4gICAgdGhpcy5fX2RldGFjaEFuaW1hdGlvbih0aGlzLl9hbmltYXRpb24pO1xuICAgIGlmIChQbGF0Zm9ybS5PUyA9PT0gJ3dlYicpIHtcbiAgICAgIHRoaXMuX3VwZGF0ZVZhbHVlKHZhbHVlKTtcbiAgICB9IGVsc2Uge1xuICAgICAgZXZhbHVhdGVPbmNlKHNldCh0aGlzLCB2YWx1ZSksIHRoaXMpO1xuICAgIH1cbiAgfVxuXG4gIGludGVycG9sYXRlKGNvbmZpZykge1xuICAgIHJldHVybiBpbnRlcnBvbGF0ZSh0aGlzLCBjb25maWcpO1xuICB9XG59XG4iXX0=

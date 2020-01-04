@@ -1,0 +1,1 @@
+{"version":3,"sources":["_baseLodash.js"],"names":["baseLodash","module","exports"],"mappings":"AAKA,SAASA,UAAT,GAAsB,CAErB;;AAEDC,MAAM,CAACC,OAAP,GAAiBF,UAAjB","sourcesContent":["/**\n * The function whose prototype chain sequence wrappers inherit from.\n *\n * @private\n */\nfunction baseLodash() {\n  // No operation performed.\n}\n\nmodule.exports = baseLodash;\n"]}

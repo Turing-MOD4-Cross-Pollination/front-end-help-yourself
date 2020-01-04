@@ -1,0 +1,12 @@
+49e9bff95da88b5f04d4cb7f977d26ef
+try {
+  var util = require('util');
+  /* istanbul ignore next */
+
+
+  if (typeof util.inherits !== 'function') throw '';
+  module.exports = util.inherits;
+} catch (e) {
+  /* istanbul ignore next */
+  module.exports = require('./inherits_browser.js');
+}

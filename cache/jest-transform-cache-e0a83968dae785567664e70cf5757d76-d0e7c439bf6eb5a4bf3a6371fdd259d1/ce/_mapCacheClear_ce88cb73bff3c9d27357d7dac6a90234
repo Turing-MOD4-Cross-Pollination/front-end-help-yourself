@@ -1,0 +1,16 @@
+3017299db60b9e8e00ef5ffa9a732687
+var Hash = require("./_Hash"),
+    ListCache = require("./_ListCache"),
+    Map = require("./_Map");
+
+function mapCacheClear() {
+  this.size = 0;
+  this.__data__ = {
+    'hash': new Hash(),
+    'map': new (Map || ListCache)(),
+    'string': new Hash()
+  };
+}
+
+module.exports = mapCacheClear;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIl9tYXBDYWNoZUNsZWFyLmpzIl0sIm5hbWVzIjpbIkhhc2giLCJyZXF1aXJlIiwiTGlzdENhY2hlIiwiTWFwIiwibWFwQ2FjaGVDbGVhciIsInNpemUiLCJfX2RhdGFfXyIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiJBQUFBLElBQUlBLElBQUksR0FBR0MsT0FBTyxXQUFsQjtBQUFBLElBQ0lDLFNBQVMsR0FBR0QsT0FBTyxnQkFEdkI7QUFBQSxJQUVJRSxHQUFHLEdBQUdGLE9BQU8sVUFGakI7O0FBV0EsU0FBU0csYUFBVCxHQUF5QjtBQUN2QixPQUFLQyxJQUFMLEdBQVksQ0FBWjtBQUNBLE9BQUtDLFFBQUwsR0FBZ0I7QUFDZCxZQUFRLElBQUlOLElBQUosRUFETTtBQUVkLFdBQU8sS0FBS0csR0FBRyxJQUFJRCxTQUFaLEdBRk87QUFHZCxjQUFVLElBQUlGLElBQUo7QUFISSxHQUFoQjtBQUtEOztBQUVETyxNQUFNLENBQUNDLE9BQVAsR0FBaUJKLGFBQWpCIiwic291cmNlc0NvbnRlbnQiOlsidmFyIEhhc2ggPSByZXF1aXJlKCcuL19IYXNoJyksXG4gICAgTGlzdENhY2hlID0gcmVxdWlyZSgnLi9fTGlzdENhY2hlJyksXG4gICAgTWFwID0gcmVxdWlyZSgnLi9fTWFwJyk7XG5cbi8qKlxuICogUmVtb3ZlcyBhbGwga2V5LXZhbHVlIGVudHJpZXMgZnJvbSB0aGUgbWFwLlxuICpcbiAqIEBwcml2YXRlXG4gKiBAbmFtZSBjbGVhclxuICogQG1lbWJlck9mIE1hcENhY2hlXG4gKi9cbmZ1bmN0aW9uIG1hcENhY2hlQ2xlYXIoKSB7XG4gIHRoaXMuc2l6ZSA9IDA7XG4gIHRoaXMuX19kYXRhX18gPSB7XG4gICAgJ2hhc2gnOiBuZXcgSGFzaCxcbiAgICAnbWFwJzogbmV3IChNYXAgfHwgTGlzdENhY2hlKSxcbiAgICAnc3RyaW5nJzogbmV3IEhhc2hcbiAgfTtcbn1cblxubW9kdWxlLmV4cG9ydHMgPSBtYXBDYWNoZUNsZWFyO1xuIl19

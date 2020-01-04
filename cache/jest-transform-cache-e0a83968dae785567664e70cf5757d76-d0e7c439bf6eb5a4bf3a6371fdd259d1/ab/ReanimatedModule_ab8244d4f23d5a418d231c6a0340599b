@@ -1,0 +1,12 @@
+2a19317142a443579ba1b88b6246d834
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _reactNative = require("react-native");
+
+var ReanimatedModule = _reactNative.NativeModules.ReanimatedModule;
+var _default = ReanimatedModule;
+exports.default = _default;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlJlYW5pbWF0ZWRNb2R1bGUuanMiXSwibmFtZXMiOlsiUmVhbmltYXRlZE1vZHVsZSIsIk5hdGl2ZU1vZHVsZXMiXSwibWFwcGluZ3MiOiI7Ozs7O0FBQUE7O0lBRVFBLGdCLEdBQXFCQywwQixDQUFyQkQsZ0I7ZUFFT0EsZ0IiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBOYXRpdmVNb2R1bGVzIH0gZnJvbSAncmVhY3QtbmF0aXZlJztcblxuY29uc3QgeyBSZWFuaW1hdGVkTW9kdWxlIH0gPSBOYXRpdmVNb2R1bGVzO1xuXG5leHBvcnQgZGVmYXVsdCBSZWFuaW1hdGVkTW9kdWxlO1xuIl19
