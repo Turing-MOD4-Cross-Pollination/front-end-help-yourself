@@ -1,11 +1,13 @@
 ![bannerconnect](https://user-images.githubusercontent.com/48811985/71701943-a1d2ad00-2dc4-11ea-8090-684f26152ed1.jpg)
 
 # Colorado: Community Connect App
+
 ## Summary
 
 A React Native application where you can find all of the resources that are available to you in the state of Colorado.
 
 ## Developers
+
 - [KVeitch](https://github.com/KVeitch)
 - [edwindelbosque](https://github.com/edwindelbosque)
 - [StarPerfect](https://github.com/StarPerfect)
@@ -17,7 +19,7 @@ A React Native application where you can find all of the resources that are avai
 
 ## Screenshots
 
-![screenshot](https://user-images.githubusercontent.com/48811985/71701944-a1d2ad00-2dc4-11ea-9e61-cdd9fd4d7190.jpg)
+![screenshot copy](https://user-images.githubusercontent.com/48811985/71758294-aadf7f00-2e95-11ea-8028-bc065c12f99e.jpg)
 
 ## Learnings
 
@@ -39,4 +41,4 @@ A React Native application where you can find all of the resources that are avai
 2. In your Terminal, access the directory of this repository.
 3. Run `npm install` to install the webpack dependencies.
 4. Once it has finished installing, run `npm start`.
-6. Check out your broswer.
+5. Check out your broswer.
