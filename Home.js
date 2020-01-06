@@ -31,9 +31,9 @@ class Home extends Component {
 			data: []
 		};
 	}
-	// componentDidMount = () => {
-	// 	this.InternetCheck();
-	// };
+	componentDidMount = () => {
+		this.InternetCheck();
+	};
 
 	InternetCheck = () => {
 		NetInfo.fetch().then(state => {
@@ -50,6 +50,7 @@ class Home extends Component {
 	getDataWithConnection = async () => {
 		let response = await getAllData();
 		this.setState({ data: response.data.resources, isLoaded: true });
+		this.props.setAllResources(response.data.resources);
 	};
 
 	render = () => {

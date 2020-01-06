@@ -1,6 +1,15 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
+import {
+	StyleSheet,
+	Text,
+	View,
+	TouchableOpacity,
+	Image,
+	Dimensions
+} from 'react-native';
 import Footer from '../Footer/Footer';
+
+const { height, width } = Dimensions.get('window');
 
 export default class HomeScreen extends Component {
 	static navigationOptions = {
@@ -24,7 +33,7 @@ export default class HomeScreen extends Component {
 							style={styles.logoImage}
 						/>
 						<Text style={styles.logoText}>community</Text>
-						<Text style={{ ...styles.logoText, marginTop: -20 }}>connect</Text>
+						<Text style={{ ...styles.logoText, marginTop: -15 }}>connect</Text>
 					</View>
 					<Text style={styles.colorado}>COLORADO</Text>
 					<Text style={styles.summary}>
@@ -54,9 +63,7 @@ export default class HomeScreen extends Component {
 						style={{ marginLeft: 37, width: '90%' }}
 						onPress={() => navigate('ForMe')}>
 						<View style={styles.buttonForMe} title='This is a button'>
-							<Text style={{ ...styles.buttonText, fontSize: 44 }}>
-								My Resources
-							</Text>
+							<Text style={{ ...styles.buttonText }}>My Resources</Text>
 						</View>
 					</TouchableOpacity>
 				</View>
@@ -70,16 +77,15 @@ const styles = StyleSheet.create({
 	container: {
 		backgroundColor: '#102b59',
 		alignItems: 'center',
-		justifyContent: 'center',
-		padding: 10,
-		height: '93%',
+		justifyContent: 'space-around',
+		height: '90%',
 		flexDirection: 'column',
-		padding: 0,
+		paddingTop: 40,
 		margin: 0,
-		width: '100%'
+		width: width
 	},
 	buttonNow: {
-		height: 130,
+		height: 80,
 		display: 'flex',
 		justifyContent: 'center',
 		alignItems: 'center',
@@ -93,11 +99,10 @@ const styles = StyleSheet.create({
 		},
 		shadowOpacity: 0.3,
 		shadowRadius: 4.65,
-
 		elevation: 7
 	},
 	buttonNearMe: {
-		height: 130,
+		height: 80,
 		width: '97%',
 		marginLeft: 6,
 		display: 'flex',
@@ -112,11 +117,11 @@ const styles = StyleSheet.create({
 		},
 		shadowOpacity: 0.3,
 		shadowRadius: 4.65,
-
-		elevation: 7
+		elevation: 7,
+		padding: 5
 	},
 	buttonForMe: {
-		height: 130,
+		height: 80,
 		display: 'flex',
 		justifyContent: 'center',
 		alignItems: 'center',
@@ -137,11 +142,10 @@ const styles = StyleSheet.create({
 		flexDirection: 'row',
 		width: '90%',
 		justifyContent: 'center',
-		alignItems: 'center',
-		marginBottom: 10
+		alignItems: 'center'
 	},
 	buttonText: {
-		fontSize: 45,
+		fontSize: 32,
 		fontWeight: '600',
 		textAlign: 'center',
 		color: '#102b59'
@@ -150,17 +154,16 @@ const styles = StyleSheet.create({
 		width: '83%',
 		backgroundColor: 'darkgray',
 		height: 1.5,
-		marginBottom: 80
+		marginBottom: 20
 	},
 	logoContainer: {
 		backgroundColor: 'white',
 		width: '100%',
 		height: 70,
-		marginBottom: 60,
+		marginBottom: 50,
 		display: 'flex',
-		justifyContent: 'center',
-		alignItems: 'center',
-		paddingBottom: 4
+		justifyContent: 'space-around',
+		alignItems: 'center'
 	},
 	logoText: {
 		fontSize: 40,
@@ -182,14 +185,13 @@ const styles = StyleSheet.create({
 	colorado: {
 		fontSize: 28,
 		color: 'white',
-		marginBottom: 10,
 		fontWeight: 'bold'
 	},
 	summary: {
 		color: 'white',
 		width: '83%',
 		fontSize: 18,
-		marginBottom: 40,
+		marginBottom: 15,
 		textAlign: 'center',
 		opacity: 0.7
 	}

@@ -25,7 +25,6 @@ const ForMeScreen = props => {
 					onPress={() => setOpen(prev => !prev)}>
 					<View style={styles.accordian}>
 						<ForMeList list={categories} title='Resources' />
-						{/* {list} */}
 					</View>
 				</TouchableWithoutFeedback>
 			</View>
@@ -51,8 +50,7 @@ const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		backgroundColor: '#102b59',
-		alignItems: 'center',
-		justifyContent: 'center',
+
 		height: '100%',
 		paddingLeft: 15,
 		paddingRight: 15

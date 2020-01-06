@@ -41,11 +41,26 @@ export default class NearMeScreen extends Component {
 	};
 
 	render() {
+		var markers = [
+			{
+				latitude: 39.750784,
+				longitude: -104.996648,
+				title: 'Foo Place',
+				subtitle: '1234 Foo Drive'
+			},
+			{
+				latitude: 39.75248,
+				longitude: -104.99955,
+				title: 'Union Station',
+				subtitle: 'Saturdays 6pm - 7pm, Health prevention'
+			}
+		];
+
 		if (this.state.loaded) {
 			if (this.state.errorMessage) {
 				return (
 					<>
-						<Text style={styles.header}>Near Me</Text>
+						<Text style={styles.header}>Meetups Near Me</Text>
 						<View style={styles.container}>
 							<Text>{JSON.stringify(this.state.errorMessage)}</Text>
 						</View>
@@ -55,7 +70,7 @@ export default class NearMeScreen extends Component {
 				// if we have a location show it
 				return (
 					<>
-						<Text style={styles.header}>Near Me</Text>
+						<Text style={styles.header}>Meetups Near Me</Text>
 						<MapView
 							style={{ flex: 1 }}
 							showsUserLocation={true}
@@ -64,8 +79,21 @@ export default class NearMeScreen extends Component {
 								longitude: this.state.location.coords.longitude,
 								latitudeDelta: 0.1,
 								longitudeDelta: 0.1
-							}}
-						/>
+							}}>
+							{markers &&
+								markers.map((location, index) => {
+									const { latitude, longitude, title, subtitle } = location;
+									return (
+										<MapView.Marker
+											key={index}
+											coordinate={{ latitude, longitude }}
+											title={title}
+											description={subtitle}
+											// onPress={this.onMarkerPress(location)}
+										/>
+									);
+								})}
+						</MapView>
 					</>
 				);
 			}
@@ -73,7 +101,7 @@ export default class NearMeScreen extends Component {
 			// if we haven't loaded show a waiting placeholder
 			return (
 				<>
-					<Text style={styles.header}>Near Me</Text>
+					<Text style={styles.header}>Meetups Near Me</Text>
 					<View style={styles.container}>
 						<Text>Waiting...</Text>
 					</View>
