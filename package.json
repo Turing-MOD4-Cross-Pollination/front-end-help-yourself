@@ -26,7 +26,8 @@
 		"redux": "^4.0.4",
 		"redux-devtools-extension": "^2.13.8",
 		"redux-logger": "^3.0.6",
-		"save-dev": "0.0.1-security"
+		"save-dev": "0.0.1-security",
+		"expo-file-system": "~8.0.0"
 	},
 	"devDependencies": {
 		"babel-preset-expo": "~8.0.0",
