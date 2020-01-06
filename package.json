@@ -29,7 +29,8 @@
 		"redux-logger": "^3.0.6",
 		"redux-persist": "^6.0.0",
 		"redux-persist-expo-securestore": "^2.0.0",
-		"save-dev": "0.0.1-security"
+		"save-dev": "0.0.1-security",
+		"expo-secure-store": "~8.0.0"
 	},
 	"devDependencies": {
 		"babel-preset-expo": "~8.0.0",
