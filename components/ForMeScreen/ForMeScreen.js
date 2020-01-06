@@ -10,12 +10,12 @@ import {
 } from 'react-native';
 import Animated from 'react-native-reanimated';
 import ForMeList from './ForMeList';
-import categories from '../../util/categories';
 const { not, interpolate } = Animated;
+import { connect } from 'react-redux';
 
-const ForMeScreen = props => {
+const ForMeScreen = ({ allCategories }) => {
 	const [open, setOpen] = useState(false);
-
+	console.log(allCategories);
 	return (
 		<>
 			<Text style={styles.header}>My Resources</Text>
@@ -24,7 +24,7 @@ const ForMeScreen = props => {
 					style={styles.container}
 					onPress={() => setOpen(prev => !prev)}>
 					<View style={styles.accordian}>
-						<ForMeList list={categories} title='Resources' />
+						<ForMeList list={allCategories} title='Resources' />
 					</View>
 				</TouchableWithoutFeedback>
 			</View>
@@ -82,4 +82,8 @@ const styles = StyleSheet.create({
 	}
 });
 
-export default ForMeScreen;
+export const mapStateToProps = state => ({
+	allCategories: state.allCategories
+});
+
+export default connect(mapStateToProps)(ForMeScreen);

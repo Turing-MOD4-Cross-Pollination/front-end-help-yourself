@@ -11,7 +11,7 @@ import NearMeScreen from './components/NearMeScreen/NearMeScreen';
 import NowScreen from './components/NowScreen/NowScreen';
 import loading from './assets/splash.png';
 import { getAllData } from './util/apiCalls';
-import { setAllResources } from './actions';
+import { setAllResources, setAllCategories } from './actions';
 
 const MainNavigator = createStackNavigator({
 	Home: { screen: HomeScreen },
@@ -51,6 +51,7 @@ class Home extends Component {
 		let response = await getAllData();
 		this.setState({ data: response.data.resources, isLoaded: true });
 		this.props.setAllResources(response.data.resources);
+		this.props.setAllCategories(response.data.resources);
 	};
 
 	render = () => {
@@ -81,7 +82,8 @@ export const mapStateToProps = state => ({
 export const mapDispatchToProps = dispatch =>
 	bindActionCreators(
 		{
-			setAllResources
+			setAllResources,
+			setAllCategories
 		},
 		dispatch
 	);

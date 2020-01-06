@@ -37,7 +37,6 @@ export default class NearMeScreen extends Component {
 			});
 			this.setState({ location, loaded: true, errorMessage: null });
 		}
-		console.log(this.state.location);
 	};
 
 	render() {

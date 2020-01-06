@@ -38,8 +38,8 @@ export default ({ list, title }) => {
 			</TouchableWithoutFeedback>
 			<ScrollView>
 				<Animated.View style={[styles.items, { height }]}>
-					{list.map((item, key) => (
-						<Item {...item} key={item.name} isLast={key === list.length - 1} />
+					{list.map((name, index) => (
+						<Item key={index} name={name} isLast={index === list.length - 1} />
 					))}
 				</Animated.View>
 			</ScrollView>
