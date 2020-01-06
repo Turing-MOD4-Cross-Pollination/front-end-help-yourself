@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 import Footer from '../Footer/Footer';
 
-class HomeScreen extends Component {
+export default class HomeScreen extends Component {
 	static navigationOptions = {
 		title: 'Community Connect',
 		headerStyle: {
@@ -194,5 +194,3 @@ const styles = StyleSheet.create({
 		opacity: 0.7
 	}
 });
-
-export default HomeScreen;
