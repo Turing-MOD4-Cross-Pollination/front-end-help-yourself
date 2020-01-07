@@ -3,9 +3,9 @@ export const setSelect = data => ({
 	data
 });
 
-export const setSelectedResources = resource => ({
-	type: 'RESOURCE',
-	resource
+export const setSelectedCategories = category => ({
+	type: 'CATEGORY',
+	category
 });
 
 export const setAllResources = resources => ({

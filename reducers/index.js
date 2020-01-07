@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import select from './select';
-import selectedResources from './selectedResources';
+import selectedCategories from './selectedCategories';
 import allResources from './allResources';
 import allCategories from './allCategories';
 
@@ -8,7 +8,7 @@ const rootReducer = combineReducers({
 	allResources,
 	allCategories,
 	select,
-	selectedResources
+	selectedCategories
 });
 
 export default rootReducer;
