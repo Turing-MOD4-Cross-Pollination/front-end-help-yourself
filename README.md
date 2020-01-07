@@ -19,7 +19,7 @@ A React Native application where you can find all of the resources that are avai
 
 ## Screenshots
 
-![screenshot copy](https://user-images.githubusercontent.com/48811985/71758294-aadf7f00-2e95-11ea-8028-bc065c12f99e.jpg)
+![new copy](https://user-images.githubusercontent.com/48811985/71874219-3d438500-3119-11ea-9603-5eece1137602.jpg)
 
 ## Learnings
 
