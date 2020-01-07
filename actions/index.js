@@ -1,8 +1,3 @@
-export const setSelect = data => ({
-	type: 'OBJECT',
-	data
-});
-
 export const setSelectedCategories = category => ({
 	type: 'CATEGORY',
 	category
