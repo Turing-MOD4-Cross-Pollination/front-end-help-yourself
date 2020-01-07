@@ -19,7 +19,7 @@ export default ({ transition }) => {
 	const rotateZ = bInterpolate(transition, Math.PI, 0);
 	const backgroundColor = bInterpolateColor(
 		transition,
-		{ r: 82, g: 82, b: 81 },
+		{ r: 84, g: 84, b: 84 },
 		{ r: 237, g: 59, b: 83 }
 	);
 	return (

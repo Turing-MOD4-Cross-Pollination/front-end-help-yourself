@@ -3,7 +3,7 @@ import { StyleSheet, Text, TouchableWithoutFeedback } from 'react-native';
 import Animated, { Easing } from 'react-native-reanimated';
 import { bInterpolate, bin, useTimingTransition } from 'react-native-redash';
 import Chevron from '../Chevron';
-import Item, { LIST_ITEM_HEIGHT } from './ForMeListItem';
+import ResourceItem, { LIST_ITEM_HEIGHT } from './ResourceItem';
 import { ScrollView } from 'react-native-gesture-handler';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -26,10 +26,7 @@ const Resource = ({ categoryName, allResources }) => {
 		0,
 		LIST_ITEM_HEIGHT * resource.length
 	);
-	const bottomRadius = interpolate(transition, {
-		inputRange: [0, 16 / 400],
-		outputRange: [8, 0]
-	});
+	const bottomRadius = open ? 0 : 8;
 
 	return (
 		<>
@@ -51,9 +48,9 @@ const Resource = ({ categoryName, allResources }) => {
 					{resource
 						.filter(resource => resource.category === categoryName)
 						.map((res, index) => (
-							<Item
+							<ResourceItem
 								key={index}
-								name={res.name}
+								resource={res}
 								isLast={index === resource.length - 1}
 							/>
 						))}
@@ -65,20 +62,19 @@ const Resource = ({ categoryName, allResources }) => {
 //SWAPPED THE SCROLL VIEW AND THE ANIMATED VIEW PLACEMENT TO THE OUTSIDE.
 const styles = StyleSheet.create({
 	container: {
-		marginTop: 3,
-		backgroundColor: 'white',
+		marginTop: 8,
+		backgroundColor: '#2979FF',
 		paddingHorizontal: 16,
 		paddingVertical: 10,
 		borderRadius: 8,
 		flexDirection: 'row',
 		alignItems: 'center',
-		justifyContent: 'space-between',
-		marginBottom: 3
-		// marginHorizontal: 10
+		justifyContent: 'space-between'
 	},
 	title: {
 		fontSize: 22,
-		fontWeight: 'bold'
+		fontWeight: 'bold',
+		color: 'white'
 	},
 	items: {
 		overflow: 'hidden'
