@@ -46,7 +46,7 @@ export default ({ list, title }) => {
 		</>
 	);
 };
-//SWAPPED THE SCROLL VIEW AND THE ANIMATED VIEW PLACEMENT TO THE OUTSIDE.
+
 const styles = StyleSheet.create({
 	container: {
 		marginTop: 16,

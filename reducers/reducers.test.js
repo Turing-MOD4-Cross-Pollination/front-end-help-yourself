@@ -18,6 +18,20 @@ describe('selectedCategories', ()=>{
     const result = selectedCategories([], action);
     expect(result).toEqual([category]);
   })
+
+  it('selectedCategories should return state with ', ()=>{
+    const category = "Baby Food"
+    const action = {
+      type: 'CATEGORY',
+      category
+    };
+    const result = selectedCategories(['Baby Food'], action);
+    expect(result).toEqual([]);
+  })
+
+
+
+
 })
 
 describe('allResources', ()=>{
