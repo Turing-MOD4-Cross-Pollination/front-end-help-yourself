@@ -12,13 +12,14 @@ import Animated from 'react-native-reanimated';
 import ForMeList from './ForMeList';
 const { not, interpolate } = Animated;
 import { connect } from 'react-redux';
+import Resource from './Resource';
 
-const ForMeScreen = ({ allCategories }) => {
+const ForMeScreen = ({ allCategories, selectedCategories }) => {
 	const [open, setOpen] = useState(false);
 	return (
 		<>
 			<Text style={styles.header}>My Resources</Text>
-			<View style={styles.container}>
+			<ScrollView style={styles.container}>
 				<TouchableWithoutFeedback
 					style={styles.container}
 					onPress={() => setOpen(prev => !prev)}>
@@ -26,7 +27,11 @@ const ForMeScreen = ({ allCategories }) => {
 						<ForMeList list={allCategories} title='Categories' />
 					</View>
 				</TouchableWithoutFeedback>
-			</View>
+				{selectedCategories &&
+					selectedCategories.map((category, index) => {
+						return <Resource key={index} categoryName={category} />;
+					})}
+			</ScrollView>
 		</>
 	);
 };
@@ -85,7 +90,8 @@ const styles = StyleSheet.create({
 });
 
 export const mapStateToProps = state => ({
-	allCategories: state.allCategories
+	allCategories: state.allCategories,
+	selectedCategories: state.selectedCategories
 });
 
 export default connect(mapStateToProps)(ForMeScreen);

@@ -4,7 +4,8 @@ const selectedCategories = (state = [], action) => {
 			if (state.includes(action.category)) {
 				return state.filter(element => element !== action.category);
 			} else {
-				return [...state, action.category];
+				console.log([...state, action.category]);
+				return [action.category, ...state];
 			}
 		default:
 			return state;
