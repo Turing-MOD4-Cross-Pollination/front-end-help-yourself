@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import { setSelectedCategories } from '../../actions';
 export const LIST_ITEM_HEIGHT = 54;
 
-const ForMeListItem = ({
+export const ForMeListItem = ({
 	name,
 	isLast,
 	setSelectedCategories,
