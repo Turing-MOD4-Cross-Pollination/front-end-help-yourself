@@ -1,16 +1,18 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import rootReducer from './reducers';
+import { PersistGate } from 'redux-persist/integration/react'
 import Home from './Home';
-import logger from 'redux-logger'
 
-const store = createStore(rootReducer, applyMiddleware(logger));
+import { store, persistor } from './store';
+
 
 const App = () => {
+
     return (
       <Provider store={store}>
-        <Home />
+        <PersistGate loading={null} persistor={persistor}>
+          <Home />
+        </PersistGate>
       </Provider>
     );
 }
