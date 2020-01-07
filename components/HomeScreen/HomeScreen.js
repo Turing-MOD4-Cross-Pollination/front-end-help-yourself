@@ -17,6 +17,7 @@ export default class HomeScreen extends Component {
       fontWeight: 'bold',
     },
   };
+
   render = () => {
     const { navigate } = this.props.navigation;
     return (

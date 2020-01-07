@@ -13,7 +13,7 @@ import Animated, { Easing } from 'react-native-reanimated';
 import { bInterpolate, useTimingTransition } from 'react-native-redash';
 import Chevron from '../Chevron';
 
-const { interpolate } = Animated;
+const { not, interpolate } = Animated;
 
 const EmergencyItem = ({ resource }) => {
   const LIST_ITEM_HEIGHT = 60;
@@ -29,7 +29,7 @@ const EmergencyItem = ({ resource }) => {
   let [switchValue, toggleSwitchValue] = useState(false);
   const itemBottomRadius = switchValue ? 8 : 0;
 
-  const dialCall = () => {
+  dialCall = () => {
     let phoneNumber = '';
 
     if (Platform.OS === 'android') {

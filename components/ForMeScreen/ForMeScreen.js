@@ -37,7 +37,6 @@ ForMeScreen.navigationOptions = ({ navigation }) => ({
   headerTitleStyle: {
     fontWeight: 'bold',
   },
-  headerRight: <Button title="Home" onPress={() => navigation.navigate('Home')} />,
 });
 
 const styles = StyleSheet.create({
