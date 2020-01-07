@@ -1,35 +1,28 @@
-import { createStore, applyMiddleware } from 'redux';
-import { persistStore, persistReducer, persistCombineReducers } from "redux-persist";
-import AsyncStorage from 'react-native';
-import rootReducer from './reducers'
-import createSecureStore from "redux-persist-expo-securestore";
-// import storeConstants from './constants'
-import logger from 'redux-logger'
-import storage from 'redux-persist/lib/storage'
-// const storage = createSecureStore();
+import { AsyncStorage } from 'react-native';
+import { applyMiddleware, createStore, compose } from 'redux';
+import { createLogger } from 'redux-logger';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import { persistStore, persistReducer } from 'redux-persist'
 
-const config = {
-  key: "root",
-  storage
-};
+import rootReducer from './reducers';
 
-const reducer = persistReducer(config, rootReducer);
+const persistConfig = {
+  key: 'root2',
+  storage: AsyncStorage
+}
 
+const middlewares = [];
 
-export const store = createStore(reducer)
-export const persistor = persistStore(store)
+if (__DEV__) {
+  middlewares.push(createLogger());
+}
 
+const persistedReducer = persistReducer(persistConfig, rootReducer)
 
+export const store = createStore(
+  persistedReducer,
+  undefined,
+  composeWithDevTools(applyMiddleware(...middlewares)),
+);
 
-
-
-// function configureStore() {
-
-//   const store = createStore(reducer);
-//   const persistor = persistStore(store);
- 
-//   return { persistor, store };
-// }
-
-
-// export { configureStore };
+export const persistor = persistStore(store);
