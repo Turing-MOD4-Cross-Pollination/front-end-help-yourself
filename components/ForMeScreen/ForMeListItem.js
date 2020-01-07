@@ -1,10 +1,21 @@
 import { StyleSheet, Text, View, Switch } from 'react-native';
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { setSelectedCategories } from '../../actions';
 export const LIST_ITEM_HEIGHT = 54;
 
-export default ForMeListItem = (item, isLast) => {
+const ForMeListItem = ({
+	name,
+	isLast,
+	setSelectedCategories,
+	selectedCategories
+}) => {
 	const bottomRadius = isLast ? 8 : 0;
-	let [switchValue, toggleSwitchValue] = useState(false);
+	let [switchValue, toggleSwitchValue] = useState(
+		selectedCategories.includes(name)
+	);
+
 	return (
 		<View
 			style={[
@@ -14,10 +25,13 @@ export default ForMeListItem = (item, isLast) => {
 					borderBottomRightRadius: bottomRadius
 				}
 			]}>
-			<Text style={styles.name}>{item.name}</Text>
+			<Text style={styles.name}>{name}</Text>
 			<Switch
 				value={switchValue}
-				onValueChange={() => toggleSwitchValue(prev => !prev)}
+				onValueChange={() => {
+					toggleSwitchValue(prev => !prev);
+					setSelectedCategories(name);
+				}}
 			/>
 		</View>
 	);
@@ -36,7 +50,7 @@ const styles = StyleSheet.create({
 		width: '100%',
 		marginBottom: 4,
 		marginTop: 4,
-		borderRadius: 10
+		borderRadius: 2
 	},
 	name: {
 		fontSize: 18
@@ -51,3 +65,17 @@ const styles = StyleSheet.create({
 		fontWeight: 'bold'
 	}
 });
+
+export const mapStateToProps = state => ({
+	selectedCategories: state.selectedCategories
+});
+
+export const mapDispatchToProps = dispatch =>
+	bindActionCreators(
+		{
+			setSelectedCategories
+		},
+		dispatch
+	);
+
+export default connect(mapStateToProps, mapDispatchToProps)(ForMeListItem);

@@ -10,12 +10,11 @@ import {
 } from 'react-native';
 import Animated from 'react-native-reanimated';
 import ForMeList from './ForMeList';
-import categories from '../../util/categories';
 const { not, interpolate } = Animated;
+import { connect } from 'react-redux';
 
-const ForMeScreen = props => {
+const ForMeScreen = ({ allCategories }) => {
 	const [open, setOpen] = useState(false);
-
 	return (
 		<>
 			<Text style={styles.header}>My Resources</Text>
@@ -24,7 +23,7 @@ const ForMeScreen = props => {
 					style={styles.container}
 					onPress={() => setOpen(prev => !prev)}>
 					<View style={styles.accordian}>
-						<ForMeList list={categories} title='Resources' />
+						<ForMeList list={allCategories} title='Categories' />
 					</View>
 				</TouchableWithoutFeedback>
 			</View>
@@ -35,9 +34,12 @@ const ForMeScreen = props => {
 ForMeScreen.navigationOptions = ({ navigation }) => ({
 	title: 'For Me',
 	headerStyle: {
-		backgroundColor: '#fff'
+		backgroundColor: '#103675',
+		elevation: 0,
+		shadowOpacity: 0,
+		borderBottomWidth: 0
 	},
-	headerTintColor: '#102b59',
+	headerTintColor: '#fff',
 	headerTitleStyle: {
 		fontWeight: 'bold'
 	},
@@ -49,7 +51,7 @@ ForMeScreen.navigationOptions = ({ navigation }) => ({
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: '#102b59',
+		backgroundColor: '#103675',
 
 		height: '100%',
 		paddingLeft: 15,
@@ -76,10 +78,14 @@ const styles = StyleSheet.create({
 		paddingTop: 20,
 		paddingRight: 15,
 		paddingLeft: 15,
-		backgroundColor: '#102b59',
+		backgroundColor: '#103675',
 		color: 'white',
 		fontWeight: 'bold'
 	}
 });
 
-export default ForMeScreen;
+export const mapStateToProps = state => ({
+	allCategories: state.allCategories
+});
+
+export default connect(mapStateToProps)(ForMeScreen);

@@ -20,7 +20,7 @@ export default ({ transition }) => {
 	const backgroundColor = bInterpolateColor(
 		transition,
 		{ r: 82, g: 82, b: 81 },
-		{ r: 228, g: 86, b: 69 }
+		{ r: 237, g: 59, b: 83 }
 	);
 	return (
 		<Animated.View
