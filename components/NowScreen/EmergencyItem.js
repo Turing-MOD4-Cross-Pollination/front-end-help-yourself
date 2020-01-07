@@ -4,7 +4,10 @@ import {
 	Text,
 	View,
 	TouchableWithoutFeedback,
-	ScrollView
+	ScrollView,
+	Platform,
+	Linking,
+	TouchableOpacity
 } from 'react-native';
 import Animated, { Easing } from 'react-native-reanimated';
 import { bInterpolate, useTimingTransition } from 'react-native-redash';
@@ -28,6 +31,18 @@ const EmergencyItem = ({ resource }) => {
 	});
 	let [switchValue, toggleSwitchValue] = useState(false);
 	const itemBottomRadius = switchValue ? 8 : 0;
+
+	dialCall = () => {
+		let phoneNumber = '';
+
+		if (Platform.OS === 'android') {
+			phoneNumber = `tel:${resource.contact}`;
+		} else {
+			phoneNumber = `telprompt:${resource.contact}`;
+		}
+
+		Linking.openURL(phoneNumber);
+	};
 
 	return (
 		<View style={styles.container}>
@@ -54,7 +69,9 @@ const EmergencyItem = ({ resource }) => {
 								borderBottomRightRadius: itemBottomRadius
 							}
 						]}>
-						<Text style={styles.name}>{resource.contact}</Text>
+						<TouchableOpacity onPress={this.dialCall} activeOpacity={0.7}>
+							<Text style={styles.name}>{resource.contact}</Text>
+						</TouchableOpacity>
 					</View>
 				</Animated.View>
 			</ScrollView>
