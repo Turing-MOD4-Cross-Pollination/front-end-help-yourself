@@ -9,7 +9,7 @@
 		"test": "jest --config=./jest.config.json --coverage"
 	},
 	"dependencies": {
-		"@react-native-community/netinfo": "4.6.0",
+		"@react-native-community/netinfo": "^4.7.0",
 		"expo": "^36.0.2",
 		"expo-file-system": "~8.0.0",
 		"expo-location": "^8.0.0",
@@ -19,6 +19,7 @@
 		"react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
 		"react-native-gesture-handler": "^1.5.2",
 		"react-native-maps": "0.26.1",
+		"react-native-phone-call": "^1.0.9",
 		"react-native-reanimated": "^1.4.0",
 		"react-native-redash": "^9.0.0",
 		"react-native-web": "~0.11.7",
