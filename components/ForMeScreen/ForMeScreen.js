@@ -29,7 +29,7 @@ const ForMeScreen = ({ allCategories, selectedCategories }) => {
 				</TouchableWithoutFeedback>
 				{selectedCategories &&
 					selectedCategories.map(category => {
-						return <Text>{category}</Text>;
+						return <Resource categoryName={category} />;
 					})}
 			</ScrollView>
 		</>
