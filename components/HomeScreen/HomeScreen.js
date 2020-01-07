@@ -206,6 +206,6 @@ const styles = StyleSheet.create({
 		fontSize: 18,
 		marginBottom: 15,
 		textAlign: 'center',
-		opacity: 0.7
+		opacity: 0.8
 	}
 });

@@ -71,7 +71,7 @@ export default class NearMeScreen extends Component {
 					<>
 						<Text style={styles.header}>Meetups Near Me</Text>
 						<MapView
-							style={{ flex: 1 }}
+							style={styles.mapStyle}
 							showsUserLocation={true}
 							region={{
 								latitude: this.state.location.coords.latitude,
@@ -133,6 +133,9 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		justifyContent: 'center',
 		backgroundColor: '#ecf0f1'
+	},
+	mapStyle: {
+		flex: 1
 	},
 	paragraph: {
 		margin: 24,
