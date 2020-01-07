@@ -34,9 +34,12 @@ const ForMeScreen = ({ allCategories }) => {
 ForMeScreen.navigationOptions = ({ navigation }) => ({
 	title: 'For Me',
 	headerStyle: {
-		backgroundColor: '#fff'
+		backgroundColor: '#103675',
+		elevation: 0,
+		shadowOpacity: 0,
+		borderBottomWidth: 0
 	},
-	headerTintColor: '#102b59',
+	headerTintColor: '#fff',
 	headerTitleStyle: {
 		fontWeight: 'bold'
 	},
@@ -48,7 +51,7 @@ ForMeScreen.navigationOptions = ({ navigation }) => ({
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: '#102b59',
+		backgroundColor: '#103675',
 
 		height: '100%',
 		paddingLeft: 15,
@@ -75,7 +78,7 @@ const styles = StyleSheet.create({
 		paddingTop: 20,
 		paddingRight: 15,
 		paddingLeft: 15,
-		backgroundColor: '#102b59',
+		backgroundColor: '#103675',
 		color: 'white',
 		fontWeight: 'bold'
 	}

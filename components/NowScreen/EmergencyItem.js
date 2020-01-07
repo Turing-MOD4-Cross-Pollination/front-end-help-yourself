@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
 	itemContainer: {
 		backgroundColor: 'white',
 		flexDirection: 'row',
-		justifyContent: 'space-between',
+		justifyContent: 'flex-start',
 		alignItems: 'center',
 		paddingTop: 10,
 		borderTopWidth: 2,
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
 	name: {
 		fontSize: 30,
 		fontWeight: 'bold',
-		color: '#C4353E'
+		color: '#ed3b53'
 	},
 	pointsContainer: {
 		borderRadius: 8,

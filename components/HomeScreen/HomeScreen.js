@@ -13,11 +13,14 @@ const { height, width } = Dimensions.get('window');
 
 export default class HomeScreen extends Component {
 	static navigationOptions = {
-		title: 'Community Connect',
+		title: 'Home',
 		headerStyle: {
-			backgroundColor: '#fff'
+			backgroundColor: '#103675',
+			elevation: 0,
+			shadowOpacity: 0,
+			borderBottomWidth: 0
 		},
-		headerTintColor: '#102b59',
+		headerTintColor: '#fff',
 		headerTitleStyle: {
 			fontWeight: 'bold'
 		}
@@ -41,33 +44,35 @@ export default class HomeScreen extends Component {
 						easy access.
 					</Text>
 					<View style={styles.line}></View>
-					<View style={styles.row}>
+					<View style={styles.buttonsContainer}>
+						<View style={styles.row}>
+							<TouchableOpacity
+								style={{ width: '48%' }}
+								onPress={() => navigate('Now')}>
+								<View style={styles.buttonNow} title='This is a button'>
+									<Text style={{ ...styles.buttonText, color: 'white' }}>
+										Now
+									</Text>
+								</View>
+							</TouchableOpacity>
+							<TouchableOpacity
+								style={{ width: '48%' }}
+								onPress={() => navigate('NearMe')}>
+								<View style={styles.buttonNearMe} title='This is a button'>
+									<Text style={styles.buttonText}>Near Me</Text>
+								</View>
+							</TouchableOpacity>
+						</View>
 						<TouchableOpacity
-							style={{ width: '45%' }}
-							onPress={() => navigate('Now')}>
-							<View style={styles.buttonNow} title='This is a button'>
-								<Text style={{ ...styles.buttonText, color: 'white' }}>
-									Now
-								</Text>
-							</View>
-						</TouchableOpacity>
-						<TouchableOpacity
-							style={{ width: '45%' }}
-							onPress={() => navigate('NearMe')}>
-							<View style={styles.buttonNearMe} title='This is a button'>
-								<Text style={styles.buttonText}>Near Me</Text>
+							style={{ width: '100%' }}
+							onPress={() => navigate('ForMe')}>
+							<View style={styles.buttonForMe} title='This is a button'>
+								<Text style={{ ...styles.buttonText }}>My Resources</Text>
 							</View>
 						</TouchableOpacity>
 					</View>
-					<TouchableOpacity
-						style={{ marginLeft: 37, width: '90%' }}
-						onPress={() => navigate('ForMe')}>
-						<View style={styles.buttonForMe} title='This is a button'>
-							<Text style={{ ...styles.buttonText }}>My Resources</Text>
-						</View>
-					</TouchableOpacity>
 				</View>
-				<Footer />
+				{/* <Footer /> */}
 			</>
 		);
 	};
@@ -75,22 +80,30 @@ export default class HomeScreen extends Component {
 
 const styles = StyleSheet.create({
 	container: {
-		backgroundColor: '#102b59',
+		backgroundColor: '#103675',
 		alignItems: 'center',
 		justifyContent: 'space-around',
-		height: '90%',
+		height: '100%',
 		flexDirection: 'column',
 		paddingTop: 40,
 		margin: 0,
 		width: width
+	},
+	buttonsContainer: {
+		flexDirection: 'column',
+		alignItems: 'center',
+		height: 173,
+		justifyContent: 'space-between',
+		width: '83%',
+		marginBottom: 100
 	},
 	buttonNow: {
 		height: 80,
 		display: 'flex',
 		justifyContent: 'center',
 		alignItems: 'center',
-		width: '97%',
-		backgroundColor: '#d62934',
+		width: '100%',
+		backgroundColor: '#ed3b53',
 		borderRadius: 12,
 		shadowColor: '#000',
 		shadowOffset: {
@@ -103,12 +116,11 @@ const styles = StyleSheet.create({
 	},
 	buttonNearMe: {
 		height: 80,
-		width: '97%',
-		marginLeft: 6,
+		width: '100%',
 		display: 'flex',
 		justifyContent: 'center',
 		alignItems: 'center',
-		backgroundColor: '#fff',
+		backgroundColor: '#FFF',
 		borderRadius: 12,
 		shadowColor: '#000',
 		shadowOffset: {
@@ -125,8 +137,8 @@ const styles = StyleSheet.create({
 		display: 'flex',
 		justifyContent: 'center',
 		alignItems: 'center',
-		width: '90%',
-		backgroundColor: '#fff',
+		width: '100%',
+		backgroundColor: '#FFF',
 		borderRadius: 12,
 		shadowColor: '#000',
 		shadowOffset: {
@@ -140,19 +152,20 @@ const styles = StyleSheet.create({
 	},
 	row: {
 		flexDirection: 'row',
-		width: '90%',
-		justifyContent: 'center',
-		alignItems: 'center'
+		width: '100%',
+		justifyContent: 'space-between',
+		alignItems: 'center',
+		color: 'white'
 	},
 	buttonText: {
 		fontSize: 32,
 		fontWeight: '600',
 		textAlign: 'center',
-		color: '#102b59'
+		color: '#103675'
 	},
 	line: {
 		width: '83%',
-		backgroundColor: 'darkgray',
+		backgroundColor: '#fff',
 		height: 1.5,
 		marginBottom: 20
 	},
@@ -171,7 +184,7 @@ const styles = StyleSheet.create({
 		marginLeft: 160,
 		fontWeight: '700',
 		height: 50,
-		color: '#102b59',
+		color: '#103675',
 		letterSpacing: -1
 	},
 	logoImage: {
