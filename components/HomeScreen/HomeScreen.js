@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image, Dimensions } from 'react-native';
 
-const { width } = Dimensions.get('window');
+const { height, width } = Dimensions.get('window');
 
 export default class HomeScreen extends Component {
   static navigationOptions = {
