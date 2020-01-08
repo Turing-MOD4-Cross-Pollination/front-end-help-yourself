@@ -123,7 +123,7 @@ NearMeScreen.navigationOptions = () => ({
   },
 });
 
-const styles = StyleSheet.create({
+const styles = {
   container: {
     flex: 1,
     alignItems: 'center',
@@ -148,6 +148,6 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
   },
-});
+};
 
 export default NearMeScreen;
