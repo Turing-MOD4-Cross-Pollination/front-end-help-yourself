@@ -8,8 +8,8 @@ import HomeScreen from './components/HomeScreen/HomeScreen';
 import ForMeScreen from './components/ForMeScreen/ForMeScreen';
 import NearMeScreen from './components/NearMeScreen/NearMeScreen';
 import NowScreen from './components/NowScreen/NowScreen';
-import { getAllData } from './util/apiCalls';
-import { setAllResources, setAllCategories } from './actions';
+import { getAllData, getMeetingData } from './util/apiCalls';
+import { setAllResources, setAllCategories, setAllMeetings } from './actions';
 
 export const MainNavigator = createStackNavigator({
   Home: { screen: HomeScreen },
@@ -23,20 +23,6 @@ const AppContainer = createAppContainer(MainNavigator);
 const Home = () => {
   const [data, updateData] = useState([]);
 
-  useEffect(() => {
-    const internetCheck = () => {
-      NetInfo.fetch().then((state) => {
-        if (!state.isConnected) {
-          console.warn('PLEASE CONNECT TO INTERNET');
-        } else {
-          getDataWithConnection();
-        }
-      });
-    };
-
-    internetCheck();
-  }, []);
-
   const getDataWithConnection = async () => {
     const response = await getAllData();
     updateData(response.data.resources);
@@ -44,11 +30,32 @@ const Home = () => {
     setAllCategories(response.data.resources);
   };
 
+  const getMeetings = async () => {
+    const response = await getMeetingData();
+    setAllMeetings(response.data.recovery);
+  };
+
+  useEffect(() => {
+    const internetCheck = () => {
+      NetInfo.fetch().then((state) => {
+        if (!state.isConnected) {
+          console.warn('PLEASE CONNECT TO INTERNET');
+        } else {
+          getDataWithConnection();
+          getMeetings();
+        }
+      });
+    };
+
+    internetCheck();
+  }, []);
+
   return <AppContainer />;
 };
 
 export const mapStateToProps = (state) => ({
   allResources: state.allResources,
+  allMeetings: state.allMeetings,
 });
 
 export const mapDispatchToProps = (dispatch) =>
@@ -56,6 +63,7 @@ export const mapDispatchToProps = (dispatch) =>
     {
       setAllResources,
       setAllCategories,
+      setAllMeetings,
     },
     dispatch,
   );

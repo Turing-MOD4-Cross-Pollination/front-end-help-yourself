@@ -12,3 +12,8 @@ export const setAllCategories = (resources) => ({
   type: 'ALL_CATEGORIES',
   resources,
 });
+
+export const setAllMeetings = (resources) => ({
+  type: 'ALL_MEETINGS',
+  resources,
+});
