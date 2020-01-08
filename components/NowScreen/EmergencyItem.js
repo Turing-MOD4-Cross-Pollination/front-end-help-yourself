@@ -29,7 +29,9 @@ const EmergencyItem = ({ resource }) => {
   let [switchValue, toggleSwitchValue] = useState(false);
   const itemBottomRadius = switchValue ? 8 : 0;
 
+
   dialCall = () => {
+
     let phoneNumber = '';
 
     if (Platform.OS === 'android') {
