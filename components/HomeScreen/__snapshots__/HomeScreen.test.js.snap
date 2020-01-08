@@ -7,9 +7,9 @@ exports[`HomeScreen renders correctly 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "backgroundColor": "#103675",
+      "backgroundColor": "#003180",
       "flexDirection": "column",
-      "height": 1334,
+      "height": "100%",
       "justifyContent": "space-around",
       "margin": 0,
       "paddingTop": 40,
@@ -50,7 +50,7 @@ exports[`HomeScreen renders correctly 1`] = `
     <Text
       style={
         Object {
-          "color": "#103675",
+          "color": "#003180",
           "fontSize": 40,
           "fontWeight": "700",
           "height": 50,
@@ -65,7 +65,7 @@ exports[`HomeScreen renders correctly 1`] = `
     <Text
       style={
         Object {
-          "color": "#103675",
+          "color": "#003180",
           "fontSize": 40,
           "fontWeight": "700",
           "height": 50,
@@ -182,7 +182,7 @@ exports[`HomeScreen renders correctly 1`] = `
               Object {
                 "color": "white",
                 "fontSize": 32,
-                "fontWeight": "600",
+                "fontWeight": "700",
                 "textAlign": "center",
               }
             }
@@ -235,9 +235,9 @@ exports[`HomeScreen renders correctly 1`] = `
           <Text
             style={
               Object {
-                "color": "#103675",
+                "color": "#003180",
                 "fontSize": 32,
-                "fontWeight": "600",
+                "fontWeight": "700",
                 "textAlign": "center",
               }
             }
@@ -290,9 +290,9 @@ exports[`HomeScreen renders correctly 1`] = `
         <Text
           style={
             Object {
-              "color": "#103675",
-              "fontSize": 32,
-              "fontWeight": "600",
+              "color": "#003180",
+              "fontSize": 35,
+              "fontWeight": "700",
               "textAlign": "center",
             }
           }
