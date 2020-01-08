@@ -1,6 +1,7 @@
 import selectedCategories from './selectedCategories';
 import allResources from './allResources';
 import allCategories from './allCategories';
+import allMeetings from './allMeetings';
 
 describe('selectedCategories', () => {
   it('selectedCategories should return the initial state', () => {
@@ -121,5 +122,51 @@ describe('allCategories', () => {
     const expected = ['Baby Items', 'Child Care'];
     const result = allCategories([], action);
     expect(result).toEqual(expected);
+  });
+});
+
+describe('allMeetings', () => {
+  it('allMeetings should return the initial state', () => {
+    const expected = [];
+    const result = allMeetings([], {});
+    expect(result).toEqual(expected);
+  });
+
+  it('allMeetings should return state with ', () => {
+    const categories = [
+      {
+        id: '1',
+        name: 'Wee Cycle',
+        website: 'http://www.weecycle.org/',
+        street: '789 Sherman Street #250',
+        city: 'Denver',
+        state: 'CO',
+        zip_code: '80203',
+        contact: '720-319-7792',
+        notes:
+          'Provides new or gently used baby gear for low-income families with infants and toddlers.',
+        category: 'Baby Items',
+        subcategory: '',
+      },
+      {
+        id: '2',
+        name: 'Clayton Family Futures',
+        website: 'http://www.claytonearlylearning.org/',
+        street: '3801 Martin Luther King Blvd.',
+        city: 'Denver',
+        state: 'CO',
+        zip_code: '80205',
+        contact: '(303) 355-4411',
+        notes: 'Prenatal intervention & child development services',
+        category: 'Child Care',
+        subcategory: 'Preschools',
+      },
+    ];
+    const action = {
+      type: 'ALL_MEETINGS',
+      resources: categories,
+    };
+    const result = allMeetings([], action);
+    expect(result).toEqual(categories);
   });
 });

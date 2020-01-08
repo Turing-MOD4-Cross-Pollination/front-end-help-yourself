@@ -1,7 +1,8 @@
 const allResources = (state = [], action) => {
   switch (action.type) {
     case 'ALL_RESOURCES':
-      state = action.resources;
+      return action.resources;
+
     default:
       return state;
   }

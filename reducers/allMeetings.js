@@ -1,7 +1,7 @@
 const allMeetings = (state = [], action) => {
   switch (action.type) {
     case 'ALL_MEETINGS':
-      state = action.resources;
+      return action.resources;
 
     default:
       return state;
