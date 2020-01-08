@@ -3,7 +3,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 import NetInfo from '@react-native-community/netinfo';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import HomeScreen from './components/HomeScreen/HomeScreen';
 import ForMeScreen from './components/ForMeScreen/ForMeScreen';
 import NearMeScreen from './components/NearMeScreen/NearMeScreen';
@@ -11,7 +11,7 @@ import NowScreen from './components/NowScreen/NowScreen';
 import { getAllData } from './util/apiCalls';
 import { setAllResources, setAllCategories } from './actions';
 
-const MainNavigator = createStackNavigator({
+export const MainNavigator = createStackNavigator({
   Home: { screen: HomeScreen },
   ForMe: { screen: ForMeScreen },
   NearMe: { screen: NearMeScreen },
@@ -20,37 +20,32 @@ const MainNavigator = createStackNavigator({
 
 const AppContainer = createAppContainer(MainNavigator);
 
-class Home extends Component {
-  constructor() {
-    super();
-    this.state = {
-      data: [],
+const Home = () => {
+  const [data, updateData] = useState([]);
+
+  useEffect(() => {
+    const internetCheck = () => {
+      NetInfo.fetch().then((state) => {
+        if (!state.isConnected) {
+          console.warn('PLEASE CONNECT TO INTERNET');
+        } else {
+          getDataWithConnection();
+        }
+      });
     };
-  }
 
-  componentDidMount = () => {
-    this.InternetCheck();
+    internetCheck();
+  }, []);
+
+  const getDataWithConnection = async () => {
+    const response = await getAllData();
+    updateData(response.data.resources);
+    setAllResources(response.data.resources);
+    setAllCategories(response.data.resources);
   };
 
-  InternetCheck = () => {
-    NetInfo.fetch().then((state) => {
-      if (!state.isConnected) {
-        console.warn('PLEASE CONNECT TO INTERNET');
-      } else {
-        this.getDataWithConnection();
-      }
-    });
-  };
-
-  getDataWithConnection = async () => {
-    let response = await getAllData();
-    this.setState({ data: response.data.resources });
-    this.props.setAllResources(response.data.resources);
-    this.props.setAllCategories(response.data.resources);
-  };
-
-  render = () => <AppContainer />;
-}
+  return <AppContainer />;
+};
 
 export const mapStateToProps = (state) => ({
   allResources: state.allResources,

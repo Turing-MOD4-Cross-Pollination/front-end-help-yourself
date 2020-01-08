@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, TouchableWithoutFeedback } from 'react-native';
 import Animated, { Easing } from 'react-native-reanimated';
-import { bInterpolate, bin, useTimingTransition } from 'react-native-redash';
+import { bInterpolate, useTimingTransition } from 'react-native-redash';
 import { ScrollView } from 'react-native-gesture-handler';
 import Chevron from '../Chevron';
 import Item, { LIST_ITEM_HEIGHT } from './ForMeListItem';

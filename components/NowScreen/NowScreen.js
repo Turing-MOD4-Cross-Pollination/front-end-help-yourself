@@ -1,10 +1,9 @@
 import React from 'react';
-import { StyleSheet, Text, ScrollView, Button } from 'react-native';
+import { StyleSheet, Text, ScrollView } from 'react-native';
 import resources from '../../data/resources';
 import EmergencyItem from './EmergencyItem';
-import Footer from '../Footer/Footer';
 
-const NowScreen = (props) => {
+const NowScreen = () => {
   const emergencyItems = resources.map((resource, index) => (
     <EmergencyItem key={index} resource={resource} />
   ));
@@ -12,18 +11,15 @@ const NowScreen = (props) => {
   return (
     <>
       <Text style={styles.header}>Emergency Contacts</Text>
-      <ScrollView style={styles.container}>
-        {emergencyItems}
-        <Footer />
-      </ScrollView>
+      <ScrollView style={styles.container}>{emergencyItems}</ScrollView>
     </>
   );
 };
 
-NowScreen.navigationOptions = ({ navigation }) => ({
+NowScreen.navigationOptions = () => ({
   title: 'Now',
   headerStyle: {
-    backgroundColor: '#103675',
+    backgroundColor: '#003180',
     elevation: 0,
     shadowOpacity: 0,
     borderBottomWidth: 0,
@@ -37,7 +33,7 @@ NowScreen.navigationOptions = ({ navigation }) => ({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#103675',
+    backgroundColor: '#003180',
   },
   header: {
     fontSize: 32,
@@ -45,7 +41,7 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     paddingRight: 15,
     paddingLeft: 15,
-    backgroundColor: '#103675',
+    backgroundColor: '#003180',
     color: 'white',
     fontWeight: 'bold',
   },

@@ -13,25 +13,21 @@ import Animated, { Easing } from 'react-native-reanimated';
 import { bInterpolate, useTimingTransition } from 'react-native-redash';
 import Chevron from '../Chevron';
 
-const { not, interpolate } = Animated;
+const { interpolate } = Animated;
 
 const EmergencyItem = ({ resource }) => {
   const LIST_ITEM_HEIGHT = 60;
   const [open, setOpen] = useState(false);
-
+  const [switchValue, toggleSwitchValue] = useState(false);
+  const itemBottomRadius = switchValue ? 8 : 0;
   const transition = useTimingTransition(open, { duration: 250 }, Easing.inOut(Easing.ease));
-
   const height = bInterpolate(transition, 0, LIST_ITEM_HEIGHT * 1);
   const bottomRadius = interpolate(transition, {
     inputRange: [0, 16 / 400],
     outputRange: [8, 0],
   });
-  let [switchValue, toggleSwitchValue] = useState(false);
-  const itemBottomRadius = switchValue ? 8 : 0;
 
-
-  dialCall = () => {
-
+  const dialCall = () => {
     let phoneNumber = '';
 
     if (Platform.OS === 'android') {
@@ -70,7 +66,7 @@ const EmergencyItem = ({ resource }) => {
               },
             ]}
           >
-            <TouchableOpacity onPress={this.dialCall} activeOpacity={0.7}>
+            <TouchableOpacity onPress={dialCall} activeOpacity={0.7}>
               <Text style={styles.name}>{resource.contact}</Text>
             </TouchableOpacity>
           </View>
@@ -84,9 +80,7 @@ const styles = StyleSheet.create({
   container: {
     marginTop: 5,
     marginBottom: 5,
-    borderTopWidth: 1,
-    borderColor: 'lightgray',
-    backgroundColor: 'white',
+    backgroundColor: '#fff',
     padding: 5,
     borderRadius: 8,
     flexDirection: 'column',
@@ -101,19 +95,20 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     width: '100%',
+    alignItems: 'center',
   },
   title: {
     fontSize: 18,
     fontWeight: 'bold',
     paddingTop: 6,
     width: '85%',
-    paddingBottom: 6,
+    paddingBottom: 5,
   },
   items: {
     overflow: 'hidden',
   },
   itemContainer: {
-    backgroundColor: 'white',
+    backgroundColor: '#fff',
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
