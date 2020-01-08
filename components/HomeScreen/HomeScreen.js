@@ -1,13 +1,5 @@
 import React, { Component } from 'react';
-import {
-	StyleSheet,
-	Text,
-	View,
-	TouchableOpacity,
-	Image,
-	Dimensions
-} from 'react-native';
-import Footer from '../Footer/Footer';
+import { StyleSheet, Text, View, TouchableOpacity, Image, Dimensions } from 'react-native';
 
 const { height, width } = Dimensions.get('window');
 
@@ -74,7 +66,6 @@ export default class HomeScreen extends Component {
 						</TouchableOpacity>
 					</View>
 				</View>
-				{/* <Footer /> */}
 			</>
 		);
 	};

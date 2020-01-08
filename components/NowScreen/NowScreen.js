@@ -1,30 +1,22 @@
 import React from 'react';
-import {
-	StyleSheet,
-	Text,
-	View,
-	ScrollView,
-	TouchableOpacity,
-	Button
-} from 'react-native';
+import { StyleSheet, Text, ScrollView, Button } from 'react-native';
 import resources from '../../data/resources';
 import EmergencyItem from './EmergencyItem';
 import Footer from '../Footer/Footer';
 
-const NowScreen = props => {
-	const emergencyItems = resources.map((resource, index) => (
-		<EmergencyItem key={index} resource={resource} />
-	));
+const NowScreen = (props) => {
+  const emergencyItems = resources.map((resource, index) => (
+    <EmergencyItem key={index} resource={resource} />
+  ));
 
-	return (
-		<>
-			<Text style={styles.header}>Emergency Contacts</Text>
-			<ScrollView style={styles.container}>
-				{emergencyItems}
-				<Footer />
-			</ScrollView>
-		</>
-	);
+  return (
+    <>
+      <Text style={styles.header}>Emergency Contacts</Text>
+      <ScrollView style={styles.container}>
+        {emergencyItems}
+      </ScrollView>
+    </>
+  );
 };
 
 NowScreen.navigationOptions = ({ navigation }) => ({
@@ -38,10 +30,7 @@ NowScreen.navigationOptions = ({ navigation }) => ({
 	headerTintColor: '#fff',
 	headerTitleStyle: {
 		fontWeight: 'bold'
-	},
-	headerRight: (
-		<Button title='Home' onPress={() => navigation.navigate('Home')} />
-	)
+	}
 });
 
 const styles = StyleSheet.create({

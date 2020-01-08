@@ -1,15 +1,15 @@
 import React from 'react';
-import Footer from './Footer';
 import { shallow } from 'enzyme';
+import Footer from './Footer';
 
 describe('Footer', () => {
-	let wrapper;
+  let wrapper;
 
-	beforeEach(() => {
-		wrapper = shallow(<Footer />);
-	});
+  beforeEach(() => {
+    wrapper = shallow(<Footer />);
+  });
 
-	it('App should match snapshot', () => {
-		expect(wrapper).toMatchSnapshot();
-	});
+  it('App should match snapshot', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
 });

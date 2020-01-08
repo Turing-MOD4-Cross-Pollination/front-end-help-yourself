@@ -1,18 +1,9 @@
 import React, { useState } from 'react';
-import {
-	StyleSheet,
-	Text,
-	View,
-	Button,
-	TouchableWithoutFeedback,
-	TouchableOpacity,
-	ScrollView
-} from 'react-native';
+import { StyleSheet, Text, View, Button, TouchableWithoutFeedback, ScrollView } from 'react-native';
 import Animated from 'react-native-reanimated';
-import ForMeList from './ForMeList';
-const { not, interpolate } = Animated;
 import { connect } from 'react-redux';
 import Resource from './Resource';
+import ForMeList from './ForMeList';
 
 const ForMeScreen = ({ allCategories, selectedCategories }) => {
 	const [open, setOpen] = useState(false);
@@ -47,10 +38,7 @@ ForMeScreen.navigationOptions = ({ navigation }) => ({
 	headerTintColor: '#fff',
 	headerTitleStyle: {
 		fontWeight: 'bold'
-	},
-	headerRight: (
-		<Button title='Home' onPress={() => navigation.navigate('Home')} />
-	)
+	}
 });
 
 const styles = StyleSheet.create({
