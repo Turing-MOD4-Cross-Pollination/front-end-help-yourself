@@ -15,7 +15,7 @@ export default class HomeScreen extends Component {
 	static navigationOptions = {
 		title: 'Home',
 		headerStyle: {
-			backgroundColor: '#103675',
+			backgroundColor: '#003180',
 			elevation: 0,
 			shadowOpacity: 0,
 			borderBottomWidth: 0
@@ -67,7 +67,9 @@ export default class HomeScreen extends Component {
 							style={{ width: '100%' }}
 							onPress={() => navigate('ForMe')}>
 							<View style={styles.buttonForMe} title='This is a button'>
-								<Text style={{ ...styles.buttonText }}>My Resources</Text>
+								<Text style={{ ...styles.buttonText, fontSize: 35 }}>
+									My Resources
+								</Text>
 							</View>
 						</TouchableOpacity>
 					</View>
@@ -80,7 +82,7 @@ export default class HomeScreen extends Component {
 
 const styles = StyleSheet.create({
 	container: {
-		backgroundColor: '#103675',
+		backgroundColor: '#003180',
 		alignItems: 'center',
 		justifyContent: 'space-around',
 		height: '100%',
@@ -159,9 +161,9 @@ const styles = StyleSheet.create({
 	},
 	buttonText: {
 		fontSize: 32,
-		fontWeight: '600',
+		fontWeight: '700',
 		textAlign: 'center',
-		color: '#103675'
+		color: '#003180'
 	},
 	line: {
 		width: '83%',
@@ -184,7 +186,7 @@ const styles = StyleSheet.create({
 		marginLeft: 160,
 		fontWeight: '700',
 		height: 50,
-		color: '#103675',
+		color: '#003180',
 		letterSpacing: -1
 	},
 	logoImage: {

@@ -83,9 +83,7 @@ const styles = StyleSheet.create({
 	container: {
 		marginTop: 5,
 		marginBottom: 5,
-		borderTopWidth: 1,
-		borderColor: 'lightgray',
-		backgroundColor: 'white',
+		backgroundColor: '#fff',
 		padding: 5,
 		borderRadius: 8,
 		flexDirection: 'column',
@@ -99,20 +97,21 @@ const styles = StyleSheet.create({
 	chevronContainer: {
 		flexDirection: 'row',
 		justifyContent: 'space-between',
-		width: '100%'
+		width: '100%',
+		alignItems: 'center'
 	},
 	title: {
 		fontSize: 18,
 		fontWeight: 'bold',
 		paddingTop: 6,
 		width: '85%',
-		paddingBottom: 6
+		paddingBottom: 5
 	},
 	items: {
 		overflow: 'hidden'
 	},
 	itemContainer: {
-		backgroundColor: 'white',
+		backgroundColor: '#fff',
 		flexDirection: 'row',
 		justifyContent: 'flex-start',
 		alignItems: 'center',

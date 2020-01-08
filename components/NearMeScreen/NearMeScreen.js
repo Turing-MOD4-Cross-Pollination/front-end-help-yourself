@@ -113,7 +113,7 @@ export default class NearMeScreen extends Component {
 NearMeScreen.navigationOptions = ({ navigation }) => ({
 	title: 'Near Me',
 	headerStyle: {
-		backgroundColor: '#103675',
+		backgroundColor: '#003180',
 		elevation: 0,
 		shadowOpacity: 0,
 		borderBottomWidth: 0
@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
 		paddingTop: 20,
 		paddingRight: 15,
 		paddingLeft: 15,
-		backgroundColor: '#103675',
+		backgroundColor: '#003180',
 		color: 'white',
 		fontWeight: 'bold'
 	}

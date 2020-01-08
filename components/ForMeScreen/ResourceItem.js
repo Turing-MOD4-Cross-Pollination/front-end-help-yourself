@@ -5,7 +5,8 @@ import {
 	Platform,
 	Linking,
 	TouchableOpacity,
-	Button
+	Button,
+	ScrollView
 } from 'react-native';
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
@@ -44,7 +45,7 @@ const ResourceItem = ({
 	const { street, city, state, contact, notes, name } = resource;
 
 	return (
-		<View
+		<ScrollView
 			style={[
 				styles.container,
 				{
@@ -60,8 +61,12 @@ const ResourceItem = ({
 					{contact}
 				</Text>
 			</TouchableOpacity>
-			<Button title='Visit Website' onPress={loadInBrowser} />
-		</View>
+			<Button
+				style={styles.button}
+				title='Visit Website'
+				onPress={loadInBrowser}
+			/>
+		</ScrollView>
 	);
 };
 
@@ -69,8 +74,6 @@ const styles = StyleSheet.create({
 	container: {
 		backgroundColor: '#f0f0f0',
 		flexDirection: 'column',
-		justifyContent: 'flex-start',
-		alignItems: 'flex-start',
 		paddingVertical: 8,
 		paddingHorizontal: 16,
 		borderColor: '#f4f4f6',
@@ -100,7 +103,8 @@ const styles = StyleSheet.create({
 	},
 	phone: {
 		fontWeight: 'bold',
-		color: '#3741FE'
+		color: '#3741FE',
+		paddingBottom: 10
 	}
 });
 

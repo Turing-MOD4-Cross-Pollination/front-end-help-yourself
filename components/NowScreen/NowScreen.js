@@ -30,7 +30,7 @@ const NowScreen = props => {
 NowScreen.navigationOptions = ({ navigation }) => ({
 	title: 'Now',
 	headerStyle: {
-		backgroundColor: '#103675',
+		backgroundColor: '#003180',
 		elevation: 0,
 		shadowOpacity: 0,
 		borderBottomWidth: 0
@@ -47,7 +47,7 @@ NowScreen.navigationOptions = ({ navigation }) => ({
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: '#103675'
+		backgroundColor: '#003180'
 	},
 	header: {
 		fontSize: 32,
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
 		paddingTop: 20,
 		paddingRight: 15,
 		paddingLeft: 15,
-		backgroundColor: '#103675',
+		backgroundColor: '#003180',
 		color: 'white',
 		fontWeight: 'bold'
 	},
