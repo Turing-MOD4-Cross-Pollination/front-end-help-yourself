@@ -27,7 +27,7 @@ export default class NearMeScreen extends Component {
   }
 
   _getLocationAsync = async () => {
-    let { status } = await Permissions.askAsync(Permissions.LOCATION);
+    const { status } = await Permissions.askAsync(Permissions.LOCATION);
     if (status !== 'granted') {
       this.setState({
         errorMessage: 'Permission to access location was denied',
@@ -35,7 +35,7 @@ export default class NearMeScreen extends Component {
       });
     } else {
       // only check the location if it has been granted
-      let location = await Location.getCurrentPositionAsync({
+      const location = await Location.getCurrentPositionAsync({
         enableHighAccuracy: true,
       });
       this.setState({ location, loaded: true, errorMessage: null });
@@ -43,7 +43,7 @@ export default class NearMeScreen extends Component {
   };
 
   render() {
-    var markers = [
+    const markers = [
       {
         latitude: 39.750784,
         longitude: -104.996648,
@@ -68,14 +68,15 @@ export default class NearMeScreen extends Component {
             </View>
           </>
         );
-      } else if (this.state.location) {
+      }
+      if (this.state.location) {
         // if we have a location show it
         return (
           <>
             <Text style={styles.header}>Meetups Near Me</Text>
             <MapView
               style={styles.mapStyle}
-              showsUserLocation={true}
+              showsUserLocation
               region={{
                 latitude: this.state.location.coords.latitude,
                 longitude: this.state.location.coords.longitude,
@@ -128,7 +129,7 @@ NearMeScreen.navigationOptions = ({ navigation }) => ({
   },
 });
 
-const styles = StyleSheet.create({
+const styles = {
   container: {
     flex: 1,
     alignItems: 'center',
@@ -153,4 +154,4 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
   },
-});
+};

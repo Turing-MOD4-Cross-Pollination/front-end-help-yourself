@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import ForMeList from './ForMeList';
 import Resource from './Resource';
 
-const ForMeScreen = ({ allCategories, selectedCategories }) => {
+export const ForMeScreen = ({ allCategories, selectedCategories }) => {
   const [open, setOpen] = useState(false);
   return (
     <>

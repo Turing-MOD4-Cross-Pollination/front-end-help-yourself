@@ -1,3 +1,306 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`HomeScreen App should match snapshot 1`] = `ShallowWrapper {}`;
+
+exports[`HomeScreen renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#103675",
+      "flexDirection": "column",
+      "height": 1334,
+      "justifyContent": "space-around",
+      "margin": 0,
+      "paddingTop": 40,
+      "width": 750,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "white",
+        "display": "flex",
+        "height": 70,
+        "justifyContent": "space-around",
+        "marginBottom": 50,
+        "width": "100%",
+      }
+    }
+  >
+    <Image
+      source={
+        Object {
+          "testUri": "../../../assets/logo.png",
+        }
+      }
+      style={
+        Object {
+          "alignSelf": "center",
+          "height": 140,
+          "position": "absolute",
+          "right": "61%",
+          "top": "-54%",
+          "width": 140,
+        }
+      }
+    />
+    <Text
+      style={
+        Object {
+          "color": "#103675",
+          "fontSize": 40,
+          "fontWeight": "700",
+          "height": 50,
+          "letterSpacing": -1,
+          "marginLeft": 160,
+          "width": 230,
+        }
+      }
+    >
+      community
+    </Text>
+    <Text
+      style={
+        Object {
+          "color": "#103675",
+          "fontSize": 40,
+          "fontWeight": "700",
+          "height": 50,
+          "letterSpacing": -1,
+          "marginLeft": 160,
+          "marginTop": -15,
+          "width": 230,
+        }
+      }
+    >
+      connect
+    </Text>
+  </View>
+  <Text
+    style={
+      Object {
+        "color": "white",
+        "fontSize": 28,
+        "fontWeight": "bold",
+      }
+    }
+  >
+    COLORADO
+  </Text>
+  <Text
+    style={
+      Object {
+        "color": "white",
+        "fontSize": 18,
+        "marginBottom": 15,
+        "opacity": 0.8,
+        "textAlign": "center",
+        "width": "83%",
+      }
+    }
+  >
+    Find all resources available and make them your own for fast and easy access.
+  </Text>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#fff",
+        "height": 1.5,
+        "marginBottom": 20,
+        "width": "83%",
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "column",
+        "height": 173,
+        "justifyContent": "space-between",
+        "marginBottom": 100,
+        "width": "83%",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "color": "white",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "width": "100%",
+        }
+      }
+    >
+      <View
+        accessible={true}
+        focusable={true}
+        isTVSelectable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+            "width": "48%",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#ed3b53",
+              "borderRadius": 12,
+              "display": "flex",
+              "elevation": 7,
+              "height": 80,
+              "justifyContent": "center",
+              "shadowColor": "#000",
+              "shadowOffset": Object {
+                "height": 3,
+                "width": 0,
+              },
+              "shadowOpacity": 0.3,
+              "shadowRadius": 4.65,
+              "width": "100%",
+            }
+          }
+          title="This is a button"
+        >
+          <Text
+            style={
+              Object {
+                "color": "white",
+                "fontSize": 32,
+                "fontWeight": "600",
+                "textAlign": "center",
+              }
+            }
+          >
+            Now
+          </Text>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        isTVSelectable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+            "width": "48%",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#FFF",
+              "borderRadius": 12,
+              "display": "flex",
+              "elevation": 7,
+              "height": 80,
+              "justifyContent": "center",
+              "padding": 5,
+              "shadowColor": "#000",
+              "shadowOffset": Object {
+                "height": 3,
+                "width": 0,
+              },
+              "shadowOpacity": 0.3,
+              "shadowRadius": 4.65,
+              "width": "100%",
+            }
+          }
+          title="This is a button"
+        >
+          <Text
+            style={
+              Object {
+                "color": "#103675",
+                "fontSize": 32,
+                "fontWeight": "600",
+                "textAlign": "center",
+              }
+            }
+          >
+            Near Me
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View
+      accessible={true}
+      focusable={true}
+      isTVSelectable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+          "width": "100%",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#FFF",
+            "borderRadius": 12,
+            "display": "flex",
+            "elevation": 7,
+            "height": 80,
+            "justifyContent": "center",
+            "shadowColor": "#000",
+            "shadowOffset": Object {
+              "height": 3,
+              "width": 0,
+            },
+            "shadowOpacity": 0.3,
+            "shadowRadius": 4.65,
+            "width": "100%",
+          }
+        }
+        title="This is a button"
+      >
+        <Text
+          style={
+            Object {
+              "color": "#103675",
+              "fontSize": 32,
+              "fontWeight": "600",
+              "textAlign": "center",
+            }
+          }
+        >
+          My Resources
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
