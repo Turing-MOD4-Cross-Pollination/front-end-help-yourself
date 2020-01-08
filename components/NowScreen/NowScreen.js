@@ -2,7 +2,6 @@ import React from 'react';
 import { StyleSheet, Text, ScrollView, Button } from 'react-native';
 import resources from '../../data/resources';
 import EmergencyItem from './EmergencyItem';
-import Footer from '../Footer/Footer';
 
 const NowScreen = (props) => {
   const emergencyItems = resources.map((resource, index) => (
