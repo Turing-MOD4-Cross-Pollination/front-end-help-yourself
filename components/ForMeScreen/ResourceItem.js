@@ -1,13 +1,19 @@
-import { StyleSheet, Text, View, Platform, Linking, TouchableOpacity, Button } from 'react-native';
-import React, { useState } from 'react';
+import {
+  StyleSheet,
+  Text,
+  Platform,
+  Linking,
+  TouchableOpacity,
+  Button,
+  ScrollView,
+} from 'react-native';
+import React from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { setSelectedCategories } from '../../actions';
+
 export const LIST_ITEM_HEIGHT = 250;
 
 const ResourceItem = ({ resource, isLast, setSelectedCategories, selectedCategories }) => {
   const bottomRadius = isLast ? 8 : 0;
-  let [switchValue, toggleSwitchValue] = useState(selectedCategories.includes(resource.name));
 
   const loadInBrowser = () => {
     Linking.openURL(resource.website).catch((err) => console.error("Couldn't load page", err));
@@ -27,7 +33,7 @@ const ResourceItem = ({ resource, isLast, setSelectedCategories, selectedCategor
   const { street, city, state, contact, notes, name } = resource;
 
   return (
-    <View
+    <ScrollView
       style={[
         styles.container,
         {
@@ -42,8 +48,8 @@ const ResourceItem = ({ resource, isLast, setSelectedCategories, selectedCategor
       <TouchableOpacity onPress={dialCall} activeOpacity={0.7}>
         <Text style={{ ...styles.phone, ...styles.description }}>{contact}</Text>
       </TouchableOpacity>
-      <Button title="Visit Website" onPress={loadInBrowser} />
-    </View>
+      <Button style={styles.button} title="Visit Website" onPress={loadInBrowser} />
+    </ScrollView>
   );
 };
 
@@ -51,11 +57,8 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#f0f0f0',
     flexDirection: 'column',
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
     paddingVertical: 8,
     paddingHorizontal: 16,
-    borderColor: '#f4f4f6',
     height: LIST_ITEM_HEIGHT,
     width: '100%',
     borderColor: 'lightgray',
@@ -83,6 +86,7 @@ const styles = StyleSheet.create({
   phone: {
     fontWeight: 'bold',
     color: '#3741FE',
+    paddingBottom: 10,
   },
 });
 

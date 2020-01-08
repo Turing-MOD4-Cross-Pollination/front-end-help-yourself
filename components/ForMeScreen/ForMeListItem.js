@@ -8,7 +8,7 @@ export const LIST_ITEM_HEIGHT = 54;
 
 export const ForMeListItem = ({ name, isLast, setSelectedCategories, selectedCategories }) => {
   const bottomRadius = isLast ? 8 : 0;
-  let [switchValue, toggleSwitchValue] = useState(selectedCategories.includes(name));
+  const [switchValue, toggleSwitchValue] = useState(selectedCategories.includes(name));
 
   return (
     <View

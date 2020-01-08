@@ -1,17 +1,15 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, View, Button, TouchableWithoutFeedback, ScrollView } from 'react-native';
-import Animated from 'react-native-reanimated';
+import React from 'react';
+import { StyleSheet, Text, View, TouchableWithoutFeedback, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
-import ForMeList from './ForMeList';
 import Resource from './Resource';
+import ForMeList from './ForMeList';
 
-export const ForMeScreen = ({ allCategories, selectedCategories }) => {
-  const [open, setOpen] = useState(false);
+const ForMeScreen = ({ allCategories, selectedCategories }) => {
   return (
     <>
       <Text style={styles.header}>My Resources</Text>
       <ScrollView style={styles.container}>
-        <TouchableWithoutFeedback style={styles.container} onPress={() => setOpen((prev) => !prev)}>
+        <TouchableWithoutFeedback style={styles.container}>
           <View style={styles.accordian}>
             <ForMeList list={allCategories} title="Categories" />
           </View>
@@ -25,10 +23,10 @@ export const ForMeScreen = ({ allCategories, selectedCategories }) => {
   );
 };
 
-ForMeScreen.navigationOptions = ({ navigation }) => ({
+ForMeScreen.navigationOptions = () => ({
   title: 'For Me',
   headerStyle: {
-    backgroundColor: '#103675',
+    backgroundColor: '#003180',
     elevation: 0,
     shadowOpacity: 0,
     borderBottomWidth: 0,
@@ -42,7 +40,7 @@ ForMeScreen.navigationOptions = ({ navigation }) => ({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#103675',
+    backgroundColor: '#003180',
 
     height: '100%',
     paddingLeft: 15,
@@ -69,7 +67,7 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     paddingRight: 15,
     paddingLeft: 15,
-    backgroundColor: '#103675',
+    backgroundColor: '#003180',
     color: 'white',
     fontWeight: 'bold',
   },

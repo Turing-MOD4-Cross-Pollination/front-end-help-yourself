@@ -7,7 +7,7 @@ export default class HomeScreen extends Component {
   static navigationOptions = {
     title: 'Home',
     headerStyle: {
-      backgroundColor: '#103675',
+      backgroundColor: '#003180',
       elevation: 0,
       shadowOpacity: 0,
       borderBottomWidth: 0,
@@ -32,7 +32,7 @@ export default class HomeScreen extends Component {
           <Text style={styles.summary}>
             Find all resources available and make them your own for fast and easy access.
           </Text>
-          <View style={styles.line}></View>
+          <View style={styles.line} />
           <View style={styles.buttonsContainer}>
             <View style={styles.row}>
               <TouchableOpacity style={{ width: '48%' }} onPress={() => navigate('Now')}>
@@ -48,7 +48,7 @@ export default class HomeScreen extends Component {
             </View>
             <TouchableOpacity style={{ width: '100%' }} onPress={() => navigate('ForMe')}>
               <View style={styles.buttonForMe} title="This is a button">
-                <Text style={{ ...styles.buttonText }}>My Resources</Text>
+                <Text style={{ ...styles.buttonText, fontSize: 35 }}>My Resources</Text>
               </View>
             </TouchableOpacity>
           </View>
@@ -60,14 +60,14 @@ export default class HomeScreen extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#103675',
+    backgroundColor: '#003180',
     alignItems: 'center',
     justifyContent: 'space-around',
-    height: height,
+    height: '100%',
     flexDirection: 'column',
     paddingTop: 40,
     margin: 0,
-    width: width,
+    width,
   },
   buttonsContainer: {
     flexDirection: 'column',
@@ -139,9 +139,9 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 32,
-    fontWeight: '600',
+    fontWeight: '700',
     textAlign: 'center',
-    color: '#103675',
+    color: '#003180',
   },
   line: {
     width: '83%',
@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
     marginLeft: 160,
     fontWeight: '700',
     height: 50,
-    color: '#103675',
+    color: '#003180',
     letterSpacing: -1,
   },
   logoImage: {
