@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Platform } from 'react-native';
 import MapView from 'react-native-maps';
 import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
@@ -22,12 +22,12 @@ export default class NearMeScreen extends Component {
         loaded: true,
       });
     } else {
-      this._getLocationAsync();
+      this.getLocationAsync();
     }
   }
 
-  _getLocationAsync = async () => {
-    let { status } = await Permissions.askAsync(Permissions.LOCATION);
+  getLocationAsync = async () => {
+    const { status } = await Permissions.askAsync(Permissions.LOCATION);
     if (status !== 'granted') {
       this.setState({
         errorMessage: 'Permission to access location was denied',
@@ -35,7 +35,7 @@ export default class NearMeScreen extends Component {
       });
     } else {
       // only check the location if it has been granted
-      let location = await Location.getCurrentPositionAsync({
+      const location = await Location.getCurrentPositionAsync({
         enableHighAccuracy: true,
       });
       this.setState({ location, loaded: true, errorMessage: null });
@@ -43,7 +43,7 @@ export default class NearMeScreen extends Component {
   };
 
   render() {
-    var markers = [
+    const markers = [
       {
         latitude: 39.750784,
         longitude: -104.996648,
@@ -68,14 +68,15 @@ export default class NearMeScreen extends Component {
             </View>
           </>
         );
-      } else if (this.state.location) {
+      }
+      if (this.state.location) {
         // if we have a location show it
         return (
           <>
             <Text style={styles.header}>Meetups Near Me</Text>
             <MapView
               style={styles.mapStyle}
-              showsUserLocation={true}
+              showsUserLocation
               region={{
                 latitude: this.state.location.coords.latitude,
                 longitude: this.state.location.coords.longitude,
@@ -115,42 +116,42 @@ export default class NearMeScreen extends Component {
 }
 
 NearMeScreen.navigationOptions = ({ navigation }) => ({
-	title: 'Near Me',
-	headerStyle: {
-		backgroundColor: '#003180',
-		elevation: 0,
-		shadowOpacity: 0,
-		borderBottomWidth: 0
-	},
-	headerTintColor: '#fff',
-	headerTitleStyle: {
-		fontWeight: 'bold'
-	}
+  title: 'Near Me',
+  headerStyle: {
+    backgroundColor: '#003180',
+    elevation: 0,
+    shadowOpacity: 0,
+    borderBottomWidth: 0,
+  },
+  headerTintColor: '#fff',
+  headerTitleStyle: {
+    fontWeight: 'bold',
+  },
 });
 
 const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		alignItems: 'center',
-		justifyContent: 'center',
-		backgroundColor: '#ecf0f1'
-	},
-	mapStyle: {
-		flex: 1
-	},
-	paragraph: {
-		margin: 24,
-		fontSize: 18,
-		textAlign: 'center'
-	},
-	header: {
-		fontSize: 32,
-		paddingBottom: 15,
-		paddingTop: 20,
-		paddingRight: 15,
-		paddingLeft: 15,
-		backgroundColor: '#003180',
-		color: 'white',
-		fontWeight: 'bold'
-	}
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#ecf0f1',
+  },
+  mapStyle: {
+    flex: 1,
+  },
+  paragraph: {
+    margin: 24,
+    fontSize: 18,
+    textAlign: 'center',
+  },
+  header: {
+    fontSize: 32,
+    paddingBottom: 15,
+    paddingTop: 20,
+    paddingRight: 15,
+    paddingLeft: 15,
+    backgroundColor: '#003180',
+    color: 'white',
+    fontWeight: 'bold',
+  },
 });

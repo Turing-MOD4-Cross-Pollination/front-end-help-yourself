@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, TouchableWithoutFeedback } from 'react-native';
 import Animated, { Easing } from 'react-native-reanimated';
-import { bInterpolate, bin, useTimingTransition } from 'react-native-redash';
+import { bInterpolate, useTimingTransition } from 'react-native-redash';
 import { ScrollView } from 'react-native-gesture-handler';
 import Chevron from '../Chevron';
 import Item, { LIST_ITEM_HEIGHT } from './ForMeListItem';
@@ -45,21 +45,21 @@ export default ({ list, title }) => {
 };
 
 const styles = StyleSheet.create({
-	container: {
-		marginTop: 16,
-		backgroundColor: 'white',
-		padding: 16,
-		borderRadius: 8,
-		flexDirection: 'row',
-		alignItems: 'center',
-		justifyContent: 'space-between',
-		marginBottom: 18
-	},
-	title: {
-		fontSize: 22,
-		fontWeight: 'bold'
-	},
-	items: {
-		overflow: 'hidden'
-	}
+  container: {
+    marginTop: 16,
+    backgroundColor: 'white',
+    padding: 16,
+    borderRadius: 8,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: 18,
+  },
+  title: {
+    fontSize: 22,
+    fontWeight: 'bold',
+  },
+  items: {
+    overflow: 'hidden',
+  },
 });
