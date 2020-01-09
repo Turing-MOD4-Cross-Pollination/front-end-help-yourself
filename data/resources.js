@@ -33,7 +33,7 @@ const resources = [
 		website:
 			'http://youhavealternatives.org/?utm_source=URL&utm_medium=Domain+Name&utm_campaign=youhavealternatives.com',
 		location: '1440 Blake St #200',
-		contact: '303-295-2288',
+		contact: '(303) 295-2288',
 		notes: 'Pregnancy options, STD testing, after abortion counseling'
 	},
 	{
@@ -41,7 +41,7 @@ const resources = [
 		website:
 			'http://www.denvergov.org/content/denvergov/en/denver-311-help-center.html',
 		location: 'N/A',
-		contact: '311 (outside Denver, 720-913-11311)',
+		contact: '(720) 913-1131',
 		notes:
 			'Non-emergency services and communications between citizens and the City and County of Denver.'
 	},
@@ -50,14 +50,14 @@ const resources = [
 		website:
 			'http://www.denverhealth.org/medical-services/emergency-services/adult-urgent-care-center',
 		location: '777 Banock Street',
-		contact: '303-602-2822',
+		contact: '(303) 602-2822',
 		notes: 'Minor injuries, Fractures/Sprains'
 	},
 	{
 		name: 'Child Health Plan Plus (CHP+)',
 		website: 'https://www.colorado.gov/pacific/hcpf/child-health-plan-plus',
 		location: 'N/A',
-		contact: '800-359-1991',
+		contact: '1 (800) 359-1991',
 		notes: 'Medicaid'
 	},
 	{
@@ -72,14 +72,14 @@ const resources = [
 		name: 'Call-N-Ride (RTD)',
 		website: 'http://www.rtd-denver.com/callNRide.shtml',
 		location: '1600 Blake Street',
-		contact: '303-628-9000',
+		contact: '(303) 628-9000',
 		notes: 'Wheelchair accessible transportation'
 	},
 	{
 		name: 'Denver Health Eye Clinic',
 		website: 'http://www.denverhealth.org/medical-services/vision-and-eye-care',
 		location: '700 Delaware Street',
-		contact: '303-602-8550',
+		contact: '(303) 602-8550',
 		notes: 'M-F 8am-5pm Appointment Line: 303-436-4949'
 	}
 ];
