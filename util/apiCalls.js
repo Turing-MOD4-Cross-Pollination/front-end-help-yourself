@@ -27,3 +27,16 @@ export const getMeetingData = () => {
     .then((res) => res.json())
     .catch((error) => console.log(error));
 };
+
+export const getLocation = async (address) => {
+  const opts = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+  };
+  const response = await fetch(
+    `https://cc-be-micro.herokuapp.com/api/v1/coordinates?address=${address}`,
+    opts,
+  );
+  const location = await response.json();
+  return location.data.attributes;
+};
