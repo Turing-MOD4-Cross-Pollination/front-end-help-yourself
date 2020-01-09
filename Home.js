@@ -3,7 +3,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 import NetInfo from '@react-native-community/netinfo';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import React, { useEffect, useState } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import HomeScreen from './components/HomeScreen/HomeScreen';
 import ForMeScreen from './components/ForMeScreen/ForMeScreen';
 import NearMeScreen from './components/NearMeScreen/NearMeScreen';
@@ -20,37 +20,38 @@ export const MainNavigator = createStackNavigator({
 
 const AppContainer = createAppContainer(MainNavigator);
 
-const Home = () => {
-  const [data, updateData] = useState([]);
+class Home extends Component {
 
-  const getDataWithConnection = async () => {
+  getDataWithConnection = async () => {
+    const { setAllResources, setAllCategories } = this.props;
     const response = await getAllData();
-    updateData(response.data.resources);
     setAllResources(response.data.resources);
     setAllCategories(response.data.resources);
   };
 
-  const getMeetings = async () => {
+  getMeetings = async () => {
+    const { setAllMeetings } = this.props;
     const response = await getMeetingData();
     setAllMeetings(response.data.recovery);
+
   };
 
-  useEffect(() => {
-    const internetCheck = () => {
-      NetInfo.fetch().then((state) => {
-        if (!state.isConnected) {
-          console.warn('PLEASE CONNECT TO INTERNET');
-        } else {
-          getDataWithConnection();
-          getMeetings();
-        }
-      });
-    };
+  componentDidMount() {
+    this.internetCheck()
+  }
 
-    internetCheck();
-  }, []);
+  internetCheck = () => {
+    NetInfo.fetch().then((state) => {
+      if (!state.isConnected) {
+        console.warn('PLEASE CONNECT TO INTERNET');
+      } else {
+        this.getDataWithConnection();
+        this.getMeetings();
+      }
+    });
+  }
 
-  return <AppContainer />;
+  render() { return <AppContainer /> }
 };
 
 export const mapStateToProps = (state) => ({
@@ -58,8 +59,8 @@ export const mapStateToProps = (state) => ({
   allMeetings: state.allMeetings,
 });
 
-export const mapDispatchToProps = (dispatch) =>
-  bindActionCreators(
+export const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators(
     {
       setAllResources,
       setAllCategories,
@@ -67,5 +68,5 @@ export const mapDispatchToProps = (dispatch) =>
     },
     dispatch,
   );
-
+}
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
