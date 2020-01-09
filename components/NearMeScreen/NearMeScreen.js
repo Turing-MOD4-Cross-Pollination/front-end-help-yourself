@@ -3,8 +3,9 @@ import { StyleSheet, Text, View, Platform } from 'react-native';
 import MapView from 'react-native-maps';
 import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
+import { connect } from 'react-redux';
 
-const NearMeScreen = () => {
+const NearMeScreen = ({ allMeetings }) => {
   const [location, updateLocation] = useState(null);
   const [errorMessage, updateError] = useState(null);
   const [loaded, updateLoaded] = useState(false);
@@ -39,21 +40,6 @@ const NearMeScreen = () => {
     checkDevice();
   }, []);
 
-  const markers = [
-    {
-      latitude: 39.750784,
-      longitude: -104.996648,
-      title: 'Foo Place',
-      subtitle: '1234 Foo Drive',
-    },
-    {
-      latitude: 39.75248,
-      longitude: -104.99955,
-      title: 'Union Station',
-      subtitle: 'Saturdays 6pm - 7pm, Health prevention',
-    },
-  ];
-
   if (loaded) {
     if (errorMessage) {
       return (
@@ -66,7 +52,6 @@ const NearMeScreen = () => {
       );
     }
     if (location) {
-      // if we have a location show it
       return (
         <>
           <Text style={styles.header}>Meetups Near Me</Text>
@@ -80,12 +65,12 @@ const NearMeScreen = () => {
               longitudeDelta: 0.1,
             }}
           >
-            {markers &&
-              markers.map((location, index) => {
-                const { latitude, longitude, title, subtitle } = location;
+            {allMeetings &&
+              allMeetings.map((meeting, index) => {
+                const { latitude, longitude, title, subtitle } = meeting;
                 return (
                   <MapView.Marker
-                    key={latitude}
+                    key={latitude + index}
                     coordinate={{ latitude, longitude }}
                     title={title}
                     description={subtitle}
@@ -97,7 +82,6 @@ const NearMeScreen = () => {
       );
     }
   } else {
-    // if we haven't loaded show a waiting placeholder
     return (
       <>
         <Text style={styles.header}>Meetups Near Me</Text>
@@ -123,7 +107,7 @@ NearMeScreen.navigationOptions = () => ({
   },
 });
 
-const styles = {
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
@@ -148,6 +132,10 @@ const styles = {
     color: 'white',
     fontWeight: 'bold',
   },
-};
+});
 
-export default NearMeScreen;
+export const mapStateToProps = (state) => ({
+  allMeetings: state.allMeetings,
+});
+
+export default connect(mapStateToProps)(NearMeScreen);
